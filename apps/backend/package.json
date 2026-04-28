@@ -2,7 +2,7 @@
   "name": "backend",
   "version": "1.0.0",
   "private": true,
-  "description": "An CMS Strapi application - DATHA+",
+  "description": "Strapi CMS backend for fullstack portfolio",
   "dependencies": {
     "@strapi-community/plugin-seo": "^2.1.1",
     "@strapi/plugin-documentation": "5.31.3",
@@ -26,8 +26,8 @@
     "node": ">=20.0.0 <=24.x.x"
   },
   "strapi": {
-    "uuid": "79f3b081-8f06-43cf-8c23-0b61b2ec787a",
-    "installId": "97ea426f6bbfa858c5e902be2658f135e1fdbcd2f05d2ac04ba55324d13ffdcb"
+    "uuid": "",
+    "installId": ""
   },
   "devDependencies": {
     "@types/supertest": "^6.0.3",

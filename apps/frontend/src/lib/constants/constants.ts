@@ -27,11 +27,11 @@ export const DEFAULT_GTM_EVENT: TGtmEvent = {
   flow: "",
   section: "",
   elementDescription: "",
-  em: "xtriminvitado@xtrim.com.ec",
-  ph: "593986911813",
-  fn: "invitadonombre",
-  ln: "invitadoapellido",
-  ct: "quito",
-  country: "ec",
+  em: "",
+  ph: "",
+  fn: "",
+  ln: "",
+  ct: "",
+  country: "",
   idTransaction: ""
 };

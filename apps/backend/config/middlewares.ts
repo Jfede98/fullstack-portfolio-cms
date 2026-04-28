@@ -48,7 +48,7 @@ export default [
       headers: ["Content-Type", "Authorization", "Origin", "Accept"]
     }
   },
-  { name: "strapi::poweredBy", config: { poweredBy: "Datha+" } },
+  { name: "strapi::poweredBy", config: { poweredBy: "Portfolio CMS" } },
   "strapi::query",
   "strapi::body",
   {

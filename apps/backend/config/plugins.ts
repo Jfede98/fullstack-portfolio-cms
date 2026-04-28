@@ -109,17 +109,13 @@ export default ({ env }) => {
         openapi: "3.0.1",
         info: {
           version: "1.0.0",
-          title: "Xtrim API Documentation",
-          description: "Documentacion de la API de Xtrim"
+          title: "Portfolio CMS API",
+          description: "API Documentation"
         },
         servers: [
           {
             url: "http://localhost:1337/api",
             description: "Local Development API Server"
-          },
-          {
-            url: "https://dev-xtrim-admin.dathaplus.com/api",
-            description: "DEVELOPMENT API Server"
           }
         ],
         "x-strapi-config": {
