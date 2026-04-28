@@ -124,36 +124,41 @@ bun run dev:storybook    # Storybook en http://localhost:6006
 
 ---
 
-## 🚀 Plan de Deploy (Servicios Gratuitos)
+## 🚀 Plan de Deploy — $0/mes
+
+| Servicio | Proveedor | Tier | Costo | Notas |
+|----------|-----------|------|-------|-------|
+| Frontend | **Vercel** | Free | $0 | Soporte nativo Next.js, preview deploys |
+| Backend (Strapi) | **Render** | Free | $0 | ⚠️ Cold starts ~30-50s tras 15min inactivo |
+| Base de Datos | **Supabase** | Free | $0 | 500MB, pausa tras 1 semana sin actividad |
+| Media/Uploads | **Cloudinary** | Free | $0 | 25GB storage, transformaciones incluidas |
+| Storybook | **Chromatic** o **Vercel** | Free | $0 | Opcional |
+
+> **Alternativa backend**: Si los cold starts de Render molestan mucho, Railway tiene $5/mes de crédito gratis e incluye PostgreSQL sin pausas.
 
 ### Frontend → Vercel
-- **Por qué**: Soporte nativo Next.js, free tier generoso, preview deploys automáticos
-- **Cómo**: Conectar repo de GitHub, seleccionar `apps/frontend` como root directory
-- **Config**: Agregar variables de entorno del frontend en Vercel dashboard
-- **Build command**: `cd ../.. && bun install && bun run build:all-frontend`
-- **Output directory**: `apps/frontend/.next`
-- **Nota**: El `next.config.ts` tiene `output: "standalone"` y `transpilePackages: ["@sitio-publico/shared-ui"]`
+- Conectar repo de GitHub, seleccionar `apps/frontend` como root directory
+- Build command: `cd ../.. && bun install && bun run build:all-frontend`
+- Output directory: `apps/frontend/.next`
+- Agregar variables de entorno del frontend en Vercel dashboard
+- Nota: `next.config.ts` tiene `output: "standalone"` y `transpilePackages: ["@sitio-publico/shared-ui"]`
 
-### Backend (Strapi) → Railway
-- **Por qué**: Soporta Node.js, incluye PostgreSQL, free tier con $5/mes de crédito
-- **Alternativa**: Render (free tier con cold starts de ~30s)
-- **Cómo**: Conectar repo, seleccionar `apps/backend` como root, configurar start command `bun run start`
-- **Config**: Agregar todas las variables de entorno del backend
+### Backend (Strapi) → Render
+- Conectar repo, seleccionar `apps/backend` como root
+- Start command: `bun run start`
+- Agregar todas las variables de entorno del backend
 - **Importante**: En producción cambiar `APP_KEYS`, `API_TOKEN_SALT`, `ADMIN_JWT_SECRET`, `JWT_SECRET` a valores seguros
+- ⚠️ Free tier duerme el servicio tras 15min sin requests → primera visita tarda ~30-50s
 
-### Base de Datos → Railway PostgreSQL (incluido) o Supabase
-- **Railway**: Viene incluido si el backend está ahí, más simple
-- **Supabase**: Free tier con 500MB, buena opción si el backend va en otro lado
-- **Config**: Usar `DATABASE_URL` connection string o las variables individuales
+### Base de Datos → Supabase
+- Crear proyecto en Supabase, copiar connection string
+- Usar `DATABASE_URL` en el `.env` del backend, o las variables individuales (`DATABASE_HOST`, etc.)
+- Activar SSL: `DATABASE_SSL=true`
+- ⚠️ Free tier pausa el proyecto tras 1 semana de inactividad (se reactiva manualmente)
 
 ### Media/Uploads → Cloudinary
-- **Por qué**: Free tier con 25GB, transformaciones de imagen incluidas
-- **Alternativa**: Mantener AWS S3 si ya tienes cuenta (el plugin ya está configurado)
 - **Cambio necesario**: Instalar `@strapi/provider-upload-cloudinary` y actualizar `apps/backend/config/plugins.ts`
-
-### Storybook → Chromatic o Vercel
-- **Chromatic**: Gratis para proyectos open source, visual testing incluido
-- **Vercel**: Segundo proyecto en Vercel apuntando a `libs/shared-ui`
+- Alternativa: Mantener AWS S3 si ya tienes cuenta (el plugin ya está configurado)
 
 ---
 
@@ -213,13 +218,38 @@ Los bloques son componentes reutilizables que se agregan a las páginas:
 
 ---
 
+## 🎨 Diseño y Colores
+
+### Estado actual
+Los colores actuales son de la empresa anterior (Xtrim) y están por todo el código:
+- Morados: `#6E3279`, `#783484`, `#44224C`, `#EDE1F9` (primary)
+- Grises: `#6E6E73`, `#DBDBDC`
+- Están definidos en:
+  - `apps/frontend/tailwind.config.js` → colores del tema (`primary-*`, etc.)
+  - `libs/shared-ui/src/lib/main.css` → variables CSS
+  - Colores hardcodeados inline en componentes (ej: `bg-[#783484]`, `text-[#6E3279]`)
+
+### Pendiente
+- [ ] Definir paleta de colores personal (hacer bench de otros portfolios)
+- [ ] Definir sistema de diseño (tipografía, spacing, etc.)
+- [ ] Actualizar `tailwind.config.js` con la nueva paleta
+- [ ] Reemplazar colores hardcodeados en componentes por tokens de Tailwind
+- [ ] Actualizar variables CSS en `main.css`
+
+> **Nota**: Cuando tengas la paleta definida, los archivos clave a modificar son:
+> - `apps/frontend/tailwind.config.js`
+> - `libs/shared-ui/src/lib/main.css`
+> - Buscar y reemplazar hex codes hardcodeados en `libs/shared-ui/src/lib/components/`
+
+---
+
 ## ⚠️ Tareas Pendientes
 
 ### Prioridad Alta
 - [ ] Cambiar upload provider de AWS S3 a Cloudinary (o configurar para local en dev)
 - [ ] Crear contenido de portfolio en Strapi (proyectos, about, skills)
-- [ ] Adaptar el look & feel / tema de colores para portfolio personal
-- [ ] Deploy inicial en Vercel (frontend) + Railway (backend + DB)
+- [ ] Definir paleta de colores y sistema de diseño
+- [ ] Deploy inicial en Vercel (frontend) + Render (backend) + Supabase (DB)
 
 ### Prioridad Media
 - [ ] Renombrar `@sitio-publico/shared-ui` a `@portfolio/shared-ui` en todo el código (hay ~100+ archivos con este import, requiere search & replace global + actualizar tsconfig paths)
