@@ -164,6 +164,7 @@ coverage
 .env
 .env.harness
 !.env.example
+environment.json
 license.txt
 exports
 .strapi
