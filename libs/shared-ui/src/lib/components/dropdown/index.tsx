@@ -70,7 +70,7 @@ export const Dropdown: FC<IDropdownProps> = ({
       <div className="w-full p-2 border border-gray-300 rounded-lg bg-white cursor-pointer flex items-center justify-between">
         <div className="flex flex-wrap gap-1 flex-1">
           {selectedValues.map((value, index) => (
-            <div key={index} className="bg-[#6E3279] text-white px-2 py-1 rounded text-sm flex items-center gap-1">
+            <div key={index} className="bg-[#1B263B] text-white px-2 py-1 rounded text-sm flex items-center gap-1">
               <span>{value}</span>
               <button
                 type="button"
@@ -78,7 +78,7 @@ export const Dropdown: FC<IDropdownProps> = ({
                   e.stopPropagation();
                   removeSelectedValue(value);
                 }}
-                className="hover:bg-[#5a2861] rounded-full w-4 h-4 flex items-center justify-center text-xs"
+                className="hover:bg-[#0D1B2A] rounded-full w-4 h-4 flex items-center justify-center text-xs"
               >
                 ×
               </button>
@@ -125,11 +125,11 @@ export const Dropdown: FC<IDropdownProps> = ({
               }`}
               onClick={() => handleOptionSelect(option)}
             >
-              <span className={isSelected ? 'text-[#6E3279] font-medium' : 'text-gray-800'}>
+              <span className={isSelected ? 'text-[#1B263B] font-medium' : 'text-gray-800'}>
                 {option}
               </span>
               {isSelected && (
-                <svg className="w-4 h-4 text-[#6E3279]" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 text-[#1B263B]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41L9 16.17z"/>
                 </svg>
               )}

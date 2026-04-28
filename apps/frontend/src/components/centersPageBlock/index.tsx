@@ -255,7 +255,7 @@ export const CentersPageBlock: FC<ICentersPageBlock> = ({
     title: center.title,
     address: center.address,
     navigationButton: center.navigationButton,
-    color: "#6E3279" // Color único ya que no hay filtro de tipo
+    color: "#1B263B" // Color único ya que no hay filtro de tipo
   }));
 
   const enhancedMapConfig = {
@@ -272,7 +272,7 @@ export const CentersPageBlock: FC<ICentersPageBlock> = ({
       <div className="w-full bg-white p-6 rounded-lg mb-6">
         <div className="text-center md:text-center mb-6">
           {title && (
-            <h1 className="text-[26px] md:text-4xl lg:text-4xl font-bold text-[#6E3279] mb-4 text-left md:text-center">
+            <h1 className="text-[26px] md:text-4xl lg:text-4xl font-bold text-[#1B263B] mb-4 text-left md:text-center">
               {title}
             </h1>
           )}
@@ -362,8 +362,8 @@ export const CentersPageBlock: FC<ICentersPageBlock> = ({
                     }}
                     className={`px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer text-sm whitespace-nowrap ${
                       isSelected
-                        ? "border-[#6E3279] text-[#44224C] bg-[#EDE1F9]"
-                        : "border-[#DBDBDC] text-[#6E3279] bg-white hover:border-[#6E3279]"
+                        ? "border-[#1B263B] text-[#0D1B2A] bg-[#E0E1DD]"
+                        : "border-[#DBDBDC] text-[#1B263B] bg-white hover:border-[#1B263B]"
                     }`}
                   >
                     {service}
@@ -381,7 +381,7 @@ export const CentersPageBlock: FC<ICentersPageBlock> = ({
           {/* Desktop version */}
           <div className="hidden md:flex items-center justify-center">
             <div className="flex items-center gap-3">
-              <div className="w-5 h-5 bg-[#FFCF00] rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-5 h-5 bg-[#64FFDA] rounded-full flex items-center justify-center flex-shrink-0">
                 <span className="text-white text-xs font-bold">!</span>
               </div>
               <div className="text-left">
@@ -396,7 +396,7 @@ export const CentersPageBlock: FC<ICentersPageBlock> = ({
           {/* Mobile version */}
           <div className="md:hidden flex items-center justify-center">
             <div className="flex items-center gap-3">
-              <div className="w-5 h-5 bg-[#FFCF00] rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-5 h-5 bg-[#64FFDA] rounded-full flex items-center justify-center flex-shrink-0">
                 <span className="text-white text-xs font-bold">!</span>
               </div>
               <div className="text-left">
@@ -438,7 +438,7 @@ export const CentersPageBlock: FC<ICentersPageBlock> = ({
           <button
             className={`flex-1 py-2 px-4 text-center rounded-md font-medium transition-all duration-200 ${
               mobileView === "map"
-                ? "bg-white text-[#6E3279] shadow-sm"
+                ? "bg-white text-[#1B263B] shadow-sm"
                 : "bg-transparent text-gray-600"
             }`}
             onClick={() => setMobileView("map")}
@@ -449,7 +449,7 @@ export const CentersPageBlock: FC<ICentersPageBlock> = ({
           <button
             className={`flex-1 py-2 px-4 text-center rounded-md font-medium transition-all duration-200 ${
               mobileView === "list"
-                ? "bg-white text-[#6E3279] shadow-sm"
+                ? "bg-white text-[#1B263B] shadow-sm"
                 : "bg-transparent text-gray-600"
             }`}
             onClick={() => setMobileView("list")}

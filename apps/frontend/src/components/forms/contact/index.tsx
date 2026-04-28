@@ -210,7 +210,7 @@ export const ContactForm: FC<ContactFormProps> = ({
               <Typography
                 tag="p"
                 unstyled
-                className={{ base: "text-[16px] leading-6 font-bold text-[#44224C]" }}
+                className={{ base: "text-[16px] leading-6 font-bold text-[#0D1B2A]" }}
               >
                 {selectedPlanTitle}
               </Typography>
@@ -321,7 +321,7 @@ export const ContactForm: FC<ContactFormProps> = ({
             {...(isCoverageAction && { onClick: handleSimpleClick })}
             className={{
               base: isDsaVariant
-                ? "w-full h-12 rounded-[4px] bg-[#FFCF00] text-[#44224C] text-sm font-medium leading-6 lg:h-14 lg:w-[281px]"
+                ? "w-full h-12 rounded-[4px] bg-[#64FFDA] text-[#0D1B2A] text-sm font-medium leading-6 lg:h-14 lg:w-[281px]"
                 : isCheckoutFlowVariant
                   ? "!h-12 !w-full !rounded-[4px]"
                   : "w-full lg:h-full lg:w-full"

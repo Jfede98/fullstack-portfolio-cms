@@ -301,7 +301,7 @@ export const CentersGoogleMapVariant: FC<GoogleMapInnerProps> = ({
           >
             <div className="p-4 bg-white rounded-lg shadow-lg border-0" style={{ borderRadius: '8px' }}>
               {/* Título */}
-              <h3 className="text-lg font-bold text-[#6E3279] mb-2">
+              <h3 className="text-lg font-bold text-[#1B263B] mb-2">
                 {selectedMarker.title}
               </h3>
               
@@ -331,10 +331,10 @@ export const CentersGoogleMapVariant: FC<GoogleMapInnerProps> = ({
                   }}
                   className={`w-full px-4 py-2 rounded-md font-medium transition-colors cursor-pointer ${
                     selectedMarker.navigationButton.color === 'primary' 
-                      ? 'bg-[#6E3279] text-white hover:bg-[#5a2a63]'
+                      ? 'bg-[#1B263B] text-white hover:bg-[#0D1B2A]'
                       : selectedMarker.navigationButton.color === 'secondary'
-                      ? 'bg-[#FFCF00] text-black hover:bg-[#e6b800]'
-                      : 'bg-[#6E3279] text-white hover:bg-[#5a2a63]'
+                      ? 'bg-[#64FFDA] text-[#0D1B2A] hover:bg-[#52e6c4]'
+                      : 'bg-[#1B263B] text-white hover:bg-[#0D1B2A]'
                   }`}
                 >
                   {selectedMarker.navigationButton.children || 'Ver en mapa'}

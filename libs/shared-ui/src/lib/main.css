@@ -60,38 +60,39 @@
 
   /* Fonts Family */
   --font-xtr: "Ubuntu", sans-serif;
+  --font-montserrat: "Montserrat", sans-serif;
   --font-icons: "MaterialIcon", sans-serif;
 
   /* Font Line Height */
   --spacing-xxxs: 1rem;
 
-  /* Colors */
-  --color-primary: #783484;
-  --color-primary-50: #ede1f9;
-  --color-primary-100: #e3cdf5;
-  --color-primary-200: #d8b9f2;
-  --color-primary-300: #bc8ed1;
-  --color-primary-500: #83378f;
-  --color-primary-600: #783484;
-  --color-primary-700: #6e3279;
-  --color-primary-725: #562577;
-  --color-primary-750: #5b1665;
-  --color-primary-800: #582c63;
-  --color-primary-850: #9f62b0;
-  --color-primary-900: #44224c;
-  --color-primary-950: #460f50;
-  --color-primary-1000: #28082d;
+  /* Colors — Navy/Slate palette */
+  --color-primary: #415A77;
+  --color-primary-50: #E0E1DD;
+  --color-primary-100: #d0d1cc;
+  --color-primary-200: #b8bab5;
+  --color-primary-300: #778DA9;
+  --color-primary-500: #415A77;
+  --color-primary-600: #37506d;
+  --color-primary-700: #1B263B;
+  --color-primary-725: #182236;
+  --color-primary-750: #152030;
+  --color-primary-800: #121d2b;
+  --color-primary-850: #5e7a99;
+  --color-primary-900: #0D1B2A;
+  --color-primary-950: #0a1520;
+  --color-primary-1000: #060e16;
 
-  --color-secondary: #ffcf00;
-  --color-secondary-50: #fffde8;
-  --color-secondary-500: #ffcf00;
-  --color-secondary-800: #c7931d;
-  --color-secondary-900: #c7941c;
+  --color-secondary: #64FFDA;
+  --color-secondary-50: #e8fffa;
+  --color-secondary-500: #64FFDA;
+  --color-secondary-800: #2cbf9e;
+  --color-secondary-900: #1a9e80;
 
-  --color-tertiary: #60d669;
-  --color-tertiary-50: #f0faf1;
-  --color-tertiary-100: #daeedf;
-  --color-tertiary-300: #52c05a;
+  --color-tertiary: #64FFDA;
+  --color-tertiary-50: #e8fffa;
+  --color-tertiary-100: #c5f5ea;
+  --color-tertiary-300: #3ddbb8;
 
   --color-gray-50: #f6f6f6;
   --color-gray-100: #ececed;
@@ -152,7 +153,7 @@ body {
   }
 
   .bg-primary-750-70 {
-    background-color: rgb(91 22 101 / 0.7);
+    background-color: rgb(21 32 48 / 0.7);
   }
 
   .loader {
@@ -183,7 +184,7 @@ body {
       content: "";
       @apply absolute inset-y-0 left-0 z-20 block;
 
-      background-color: var(--color-primary-300);
+      background-color: var(--color-secondary-500);
       border-radius: inherit;
       animation: bullet-loading var(--bullet-duration, 3s) linear forwards;
     }

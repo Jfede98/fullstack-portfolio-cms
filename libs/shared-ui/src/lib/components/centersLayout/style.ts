@@ -49,7 +49,7 @@ export const CentersLayoutStyle = tv({
     ],
     activeMobileToggle: [
       "bg-white",
-      "text-[#6E3279]",
+      "text-[#1B263B]",
       "shadow-sm"
     ],
     mobileContent: [

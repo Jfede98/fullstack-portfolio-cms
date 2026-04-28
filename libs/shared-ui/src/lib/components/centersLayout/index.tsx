@@ -36,7 +36,7 @@ export const CentersLayout: FC<ICentersLayoutProps> = ({
     longitude: center.longitude,
     latitude: center.latitude,
     title: center.title,
-    color: center.serviceType === "centro_experiencia" ? "#6E3279" : "#FF6B35"
+    color: center.serviceType === "centro_experiencia" ? "#1B263B" : "#415A77"
   }));
 
   const enhancedMapConfig = {

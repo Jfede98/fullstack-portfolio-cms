@@ -31,7 +31,7 @@ export const InfoCard: FC<IInfoCardProps> = ({
 
       <h3
         className={clsx(titleStyle(), className?.title)}
-        style={{ color: '#562577' }}
+        style={{ color: '#1B263B' }}
         data-testid="info-card-title"
       >
         {title}

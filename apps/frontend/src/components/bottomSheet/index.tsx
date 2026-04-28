@@ -44,7 +44,7 @@ export const BottomSheet: FC<IBottomSheetProps> = ({
             <div className="p-6">
               {/* Header con título y botón cerrar */}
               <div className="flex justify-between items-center mb-4">
-                <h3 className="text-xl font-bold text-[#6E3279]">
+                <h3 className="text-xl font-bold text-[#1B263B]">
                   {center.title}
                 </h3>
                 <button
@@ -84,7 +84,7 @@ export const BottomSheet: FC<IBottomSheetProps> = ({
                 {/* Dirección */}
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 mt-1">
-                    <svg className="w-5 h-5 text-[#6E3279]" fill="currentColor" viewBox="0 0 20 20">
+                    <svg className="w-5 h-5 text-[#1B263B]" fill="currentColor" viewBox="0 0 20 20">
                       <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                     </svg>
                   </div>
@@ -96,7 +96,7 @@ export const BottomSheet: FC<IBottomSheetProps> = ({
                 {/* Horario */}
                 <div className="flex items-start gap-3">
                   <div className="flex-shrink-0 mt-1">
-                    <svg className="w-5 h-5 text-[#6E3279]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg className="w-5 h-5 text-[#1B263B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                   </div>
@@ -118,10 +118,10 @@ export const BottomSheet: FC<IBottomSheetProps> = ({
                     }}
                     className={`w-full px-4 py-3 rounded-lg font-medium transition-colors cursor-pointer ${
                       center.navigationButton.color === 'primary' 
-                        ? 'bg-[#6E3279] text-white hover:bg-[#5a2a63]'
+                        ? 'bg-[#1B263B] text-white hover:bg-[#0D1B2A]'
                         : center.navigationButton.color === 'secondary'
-                        ? 'bg-[#FFCF00] text-black hover:bg-[#e6b800]'
-                        : 'bg-[#6E3279] text-white hover:bg-[#5a2a63]'
+                        ? 'bg-[#64FFDA] text-[#0D1B2A] hover:bg-[#52e6c4]'
+                        : 'bg-[#1B263B] text-white hover:bg-[#0D1B2A]'
                     }`}
                   >
                     {center.navigationButton.children || "Cómo llegar"}
@@ -131,7 +131,7 @@ export const BottomSheet: FC<IBottomSheetProps> = ({
                 {/* Botón Ver servicios */}
                 <button
                   onClick={() => onServicesClick(center.services)}
-                  className="w-full px-4 py-3 rounded-lg font-medium transition-colors cursor-pointer border border-[#6E3279] text-[#6E3279] bg-white hover:bg-[#6E3279] hover:text-white"
+                  className="w-full px-4 py-3 rounded-lg font-medium transition-colors cursor-pointer border border-[#1B263B] text-[#1B263B] bg-white hover:bg-[#1B263B] hover:text-white"
                 >
                   {center.servicesButton.children || "Ver servicios disponibles"}
                 </button>

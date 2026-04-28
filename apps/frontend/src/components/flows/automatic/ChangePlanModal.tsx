@@ -53,19 +53,19 @@ export const ChangePlanModal: FC<{
           <button
             type="button"
             aria-label="Cerrar selector de planes"
-            className="flex h-[35px] w-[35px] items-center justify-center text-[#44224C]"
+            className="flex h-[35px] w-[35px] items-center justify-center text-[#0D1B2A]"
             onClick={onClose}
           >
             <Icon
               name="close"
               type="rounded"
               size="md"
-              className={{ base: "text-[#44224C]" }}
+              className={{ base: "text-[#0D1B2A]" }}
             />
           </button>
         </div>
 
-        <h2 className="w-full text-center text-[22px] leading-7 font-normal text-[#44224C]">
+        <h2 className="w-full text-center text-[22px] leading-7 font-normal text-[#0D1B2A]">
           {title}
         </h2>
 

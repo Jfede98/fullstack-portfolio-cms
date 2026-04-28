@@ -32,7 +32,7 @@ export const AttentionCenterCardStyle = tv({
     title: [
       "text-lg",
       "font-bold",
-      "text-[#6E3279]",
+      "text-[#1B263B]",
       "mb-2"
     ],
     infoContainer: [

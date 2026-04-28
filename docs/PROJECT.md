@@ -220,26 +220,30 @@ Los bloques son componentes reutilizables que se agregan a las páginas:
 
 ## 🎨 Diseño y Colores
 
-### Estado actual
-Los colores actuales son de la empresa anterior (Xtrim) y están por todo el código:
-- Morados: `#6E3279`, `#783484`, `#44224C`, `#EDE1F9` (primary)
-- Grises: `#6E6E73`, `#DBDBDC`
-- Están definidos en:
-  - `apps/frontend/tailwind.config.js` → colores del tema (`primary-*`, etc.)
-  - `libs/shared-ui/src/lib/main.css` → variables CSS
-  - Colores hardcodeados inline en componentes (ej: `bg-[#783484]`, `text-[#6E3279]`)
+### Paleta actual (Navy/Slate + Cyan accent)
+```
+#0D1B2A  → primary-900 (más oscuro, textos principales)
+#1B263B  → primary-700 (oscuro, botones, headings)
+#415A77  → primary-500 (principal, acciones)
+#778DA9  → primary-300 (medio, bordes, secondary text)
+#E0E1DD  → primary-50 (claro, backgrounds, hover states)
+#64FFDA  → secondary (accent cyan/teal, CTAs destacados)
+```
+
+### Tipografía
+- **Ubuntu** — Fuente principal (body, UI)
+- **Montserrat** — Disponible como alternativa (headings)
+- **MaterialIcon** — Iconos
+
+### Archivos de configuración
+- `libs/shared-ui/src/lib/main.css` → Variables CSS del tema (`@theme`)
+- `apps/frontend/tailwind.config.js` → Importa config de Tailwind
+- `apps/frontend/src/lib/config/tailwind.ts` → Extensiones del tema
 
 ### Pendiente
-- [ ] Definir paleta de colores personal (hacer bench de otros portfolios)
-- [ ] Definir sistema de diseño (tipografía, spacing, etc.)
-- [ ] Actualizar `tailwind.config.js` con la nueva paleta
-- [ ] Reemplazar colores hardcodeados en componentes por tokens de Tailwind
-- [ ] Actualizar variables CSS en `main.css`
-
-> **Nota**: Cuando tengas la paleta definida, los archivos clave a modificar son:
-> - `apps/frontend/tailwind.config.js`
-> - `libs/shared-ui/src/lib/main.css`
-> - Buscar y reemplazar hex codes hardcodeados en `libs/shared-ui/src/lib/components/`
+- [ ] Definir sistema de diseño completo (spacing, border-radius, shadows)
+- [ ] Revisar contraste de accesibilidad con la nueva paleta
+- [ ] Actualizar assets/imágenes placeholder con estilo navy
 
 ---
 

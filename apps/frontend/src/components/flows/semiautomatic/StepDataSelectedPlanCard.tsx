@@ -36,7 +36,7 @@ export const StepDataSelectedPlanCard: FC<{
           <Typography
             tag="p"
             unstyled
-            className={{ base: "text-[16px] leading-6 font-bold text-[#44224C]" }}
+            className={{ base: "text-[16px] leading-6 font-bold text-[#0D1B2A]" }}
           >
             {title}
           </Typography>

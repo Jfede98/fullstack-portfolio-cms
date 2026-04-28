@@ -18,7 +18,7 @@ export const CentersFiltersStyle = tv({
       "text-2xl",
       "md:text-3xl",
       "font-bold",
-      "text-[#6E3279]",
+      "text-[#1B263B]",
       "mb-2"
     ],
     subtitle: [
@@ -55,15 +55,15 @@ export const CentersFiltersStyle = tv({
       "border-gray-300",
       "bg-white",
       "text-gray-700",
-      "hover:border-[#6E3279]",
-      "hover:text-[#6E3279]"
+      "hover:border-[#1B263B]",
+      "hover:text-[#1B263B]"
     ],
     activeToggle: [
-      "border-[#6E3279]",
-      "bg-[#6E3279]",
+      "border-[#1B263B]",
+      "bg-[#1B263B]",
       "text-white",
-      "hover:bg-[#5a2861]",
-      "hover:border-[#5a2861]",
+      "hover:bg-[#0D1B2A]",
+      "hover:border-[#0D1B2A]",
       "hover:text-white"
     ],
     filtersSection: [

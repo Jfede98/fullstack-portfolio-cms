@@ -21,7 +21,7 @@ export const ListCard: FC<IListCardProps> = ({
     >
       <h3
         className={clsx(titleStyle(), className?.title)}
-        style={{ color: '#562577' }}
+        style={{ color: '#1B263B' }}
         data-testid="list-card-title"
       >
         {title}

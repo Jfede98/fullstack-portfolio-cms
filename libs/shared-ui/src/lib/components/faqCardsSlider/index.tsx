@@ -120,15 +120,15 @@ export const FAQCardsSlider: FC<IFAQCardsSliderProps> = ({
                   leftArrow: {
                     size: "md",
                     className: {
-                      base: "bg-[#783484] hover:bg-[#6b2d75] shadow-md hover:shadow-lg",
-                      icon: "text-[#EDE1F9]"
+                      base: "bg-[#415A77] hover:bg-[#1B263B] shadow-md hover:shadow-lg",
+                      icon: "text-[#E0E1DD]"
                     }
                   },
                   rightArrow: {
                     size: "md",
                     className: {
-                      base: "bg-[#783484] hover:bg-[#6b2d75] shadow-md hover:shadow-lg",
-                      icon: "text-[#EDE1F9]"
+                      base: "bg-[#415A77] hover:bg-[#1B263B] shadow-md hover:shadow-lg",
+                      icon: "text-[#E0E1DD]"
                     }
                   }
                 }}

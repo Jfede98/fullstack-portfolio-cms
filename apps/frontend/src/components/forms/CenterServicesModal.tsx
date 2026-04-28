@@ -26,7 +26,7 @@ export const CenterServicesModal = () => {
           variant="title"
           type="bold"
           className={{
-            base: "text-2xl font-bold text-[#6E3279] mb-2"
+            base: "text-2xl font-bold text-[#1B263B] mb-2"
           }}
         >
           Servicios Disponibles

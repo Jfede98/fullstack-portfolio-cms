@@ -10,7 +10,7 @@ export const CardStyle = tv({
   variants: {
     border: {
       white: ["border-white"],
-      gray: ["border-gray-200", "shadow-[0px_3px_12px_0px_#78348414]"]
+      gray: ["border-gray-200", "shadow-[0px_3px_12px_0px_#415A7714]"]
     },
     backgroundColor: {
       none: ["bg-transparent"],

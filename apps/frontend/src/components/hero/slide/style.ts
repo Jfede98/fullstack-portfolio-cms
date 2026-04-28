@@ -121,7 +121,7 @@ export const SlideStyle = tv({
       default: {},
       light: {
         titleStyle: ["text-[#582C63]"],
-        subtitleStyle: ["text-[#44224C]"]
+        subtitleStyle: ["text-[#0D1B2A]"]
       }
     },
     ctaPosition: {
@@ -136,7 +136,7 @@ export const SlideStyle = tv({
       withOverlay: true,
       variant: "light",
       class: {
-        container: ["bg-[#EDE1F9CC]"]
+        container: ["bg-[#E0E1DDCC]"]
       }
     }
   ],

@@ -280,8 +280,8 @@ export const FaqsBlock: FC<IFaqsBlockProps> = (props) => {
                     className={clsx(
                       "px-3 py-1.5 rounded-lg border transition-all duration-200 cursor-pointer text-sm whitespace-nowrap flex-shrink-0",
                       selectedCategory === category.value
-                        ? "border-[#6E3279] text-[#44224C] bg-[#EDE1F9]"
-                        : "border-[#DBDBDC] text-[#6E3279] bg-white hover:border-[#6E3279]"
+                        ? "border-[#1B263B] text-[#0D1B2A] bg-[#E0E1DD]"
+                        : "border-[#DBDBDC] text-[#1B263B] bg-white hover:border-[#1B263B]"
                     )}
                   >
                     {category.label}

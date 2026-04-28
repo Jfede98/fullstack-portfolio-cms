@@ -80,7 +80,7 @@ export const AttentionCenterCard: FC<IAttentionCenterCardProps> = ({
                 name="location_on"
                 type="outlined"
                 size="sm"
-                color="text-[#6E3279]"
+                color="text-[#1B263B]"
               />
             </div>
             <span className={clsx(infoText(), className?.infoText)}>
@@ -94,7 +94,7 @@ export const AttentionCenterCard: FC<IAttentionCenterCardProps> = ({
                 name="schedule"
                 type="outlined"
                 size="sm"
-                color="text-[#6E3279]"
+                color="text-[#1B263B]"
               />
             </div>
             <span className={clsx(infoText(), className?.infoText)}>
