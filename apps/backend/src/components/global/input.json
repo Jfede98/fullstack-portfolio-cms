@@ -1,0 +1,130 @@
+{
+  "collectionName": "components_global_inputs",
+  "info": {
+    "displayName": "Input"
+  },
+  "options": {},
+  "attributes": {
+    "required": {
+      "type": "boolean",
+      "required": true
+    },
+    "label": {
+      "type": "string"
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "email",
+        "number",
+        "text",
+        "tel",
+        "combobox",
+        "idCard",
+        "fingerprintCode"
+      ]
+    },
+    "maxLength": {
+      "type": "integer",
+      "conditions": {
+        "visible": {
+          "!=": [
+            {
+              "var": "type"
+            },
+            "idCard"
+          ]
+        }
+      },
+      "required": false
+    },
+    "icon": {
+      "type": "component",
+      "component": "global.icon",
+      "repeatable": false
+    },
+    "searchable": {
+      "type": "boolean",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type"
+            },
+            "combobox"
+          ]
+        }
+      },
+      "default": false
+    },
+    "optionsSource": {
+      "type": "enumeration",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type"
+            },
+            "combobox"
+          ]
+        }
+      },
+      "default": "static",
+      "enum": [
+        "static",
+        "api"
+      ]
+    },
+    "options": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "optionsSource"
+            },
+            "static"
+          ]
+        }
+      },
+      "component": "global.input-option",
+      "repeatable": true
+    },
+    "optionsApi": {
+      "type": "enumeration",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "optionsSource"
+            },
+            "api"
+          ]
+        }
+      },
+      "default": "cities",
+      "enum": [
+        "cities",
+        "addresses"
+      ]
+    },
+    "column": {
+      "type": "enumeration",
+      "default": "default",
+      "enum": [
+        "default",
+        "left",
+        "right",
+        "full"
+      ]
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,40 @@
+{
+  "kind": "singleType",
+  "collectionName": "semiautomatic_flows",
+  "info": {
+    "singularName": "semiautomatic-flow",
+    "pluralName": "semiautomatic-flows",
+    "displayName": "SemiautomaticFlow"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "coverageOkMessage": {
+      "type": "string"
+    },
+    "navbarVariant": {
+      "type": "enumeration",
+      "enum": ["default", "no_items", "simple", "none"],
+      "required": true,
+      "default": "no_items"
+    },
+    "footerVariant": {
+      "type": "enumeration",
+      "enum": ["default", "no_items", "simple", "none"],
+      "required": true,
+      "default": "no_items"
+    },
+    "section": {
+      "type": "dynamiczone",
+      "components": [
+        "step.plans",
+        "step.final-data",
+        "step.coverage",
+        "error.semiautomatic-error"
+      ],
+      "required": true
+    }
+  }
+}

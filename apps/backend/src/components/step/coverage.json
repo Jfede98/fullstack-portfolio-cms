@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_step_coverages",
+  "info": {
+    "displayName": "Coverage",
+    "icon": "earth"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "component",
+      "component": "block.two-columns",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

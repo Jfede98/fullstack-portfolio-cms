@@ -1,0 +1,217 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts Styles */
+  /* Hero */
+  --text-hero-sm: 2.5rem;
+  --text-hero-sm--line-height: 3rem;
+  --text-hero: 3.5rem;
+  --text-hero--line-height: 4rem;
+
+  /* Headline */
+  --text-h1: 2rem;
+  --text-h1--line-height: 2.5rem;
+
+  --text-h2: 1.75rem;
+  --text-h2--line-height: 2rem;
+
+  --text-h3: 1.375rem;
+  --text-h3--line-height: 1.75rem;
+
+  /* Title */
+  --text-title: 1.25rem;
+  --text-title--line-height: 1.5rem;
+
+  /* Subtitle */
+  --text-subtitle: 1.125rem;
+  --text-subtitle--line-height: 1.5rem;
+
+  /* Body */
+  --text-body: 1rem;
+  --text-body--line-height: 1.5rem;
+
+  /* Caption */
+  --text-caption: 0.875rem;
+  --text-caption--line-height: 1.25rem;
+
+  /* Legal */
+  --text-legal-sm: 0.5rem;
+  --text-legal-sm--line-height: 0.75rem;
+  --text-legal: 0.75rem;
+  --text-legal--line-height: 1rem;
+
+  /* Ammount */
+  --text-ammount1: 3.25rem;
+  --text-ammount1--line-height: 3.75rem;
+
+  --text-ammount2: 2.5rem;
+  --text-ammount2--line-height: 3rem;
+
+  --text-ammount3: 1.75rem;
+  --text-ammount3--line-height: 2rem;
+
+  /* Breakpoints */
+  --breakpoint-msm: 375px;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+  --breakpoint-xxl: 1400px;
+
+  /* Fonts Family */
+  --font-xtr: "Ubuntu", sans-serif;
+  --font-icons: "MaterialIcon", sans-serif;
+
+  /* Font Line Height */
+  --spacing-xxxs: 1rem;
+
+  /* Colors */
+  --color-primary: #783484;
+  --color-primary-50: #ede1f9;
+  --color-primary-100: #e3cdf5;
+  --color-primary-200: #d8b9f2;
+  --color-primary-300: #bc8ed1;
+  --color-primary-500: #83378f;
+  --color-primary-600: #783484;
+  --color-primary-700: #6e3279;
+  --color-primary-725: #562577;
+  --color-primary-750: #5b1665;
+  --color-primary-800: #582c63;
+  --color-primary-850: #9f62b0;
+  --color-primary-900: #44224c;
+  --color-primary-950: #460f50;
+  --color-primary-1000: #28082d;
+
+  --color-secondary: #ffcf00;
+  --color-secondary-50: #fffde8;
+  --color-secondary-500: #ffcf00;
+  --color-secondary-800: #c7931d;
+  --color-secondary-900: #c7941c;
+
+  --color-tertiary: #60d669;
+  --color-tertiary-50: #f0faf1;
+  --color-tertiary-100: #daeedf;
+  --color-tertiary-300: #52c05a;
+
+  --color-gray-50: #f6f6f6;
+  --color-gray-100: #ececed;
+  --color-gray-200: #dbdbdc;
+  --color-gray-300: #b7b7b9;
+  --color-gray-400: #6e6e73;
+  --color-gray-500: #6a7180;
+  --color-dark-grey-500: #2c2c30;
+
+  --color-green-900: #107524;
+  --color-green-50: #ecf6ee;
+
+  --color-orange-50: #fef0e5;
+  --color-orange-900: #f13700;
+
+  --color-yellow-50: #fff1b6;
+  --color-yellow-900: #9e7118;
+
+  --animate-ripple: ripple 600ms linear;
+
+  /* Escalas personalizadas para viewport responsivo */
+  --scale-viewport-xs: 0.45;
+  --scale-viewport-sm: 0.50;
+  --scale-viewport-md: 0.55;
+  --scale-viewport-md-plus: 0.60;
+  --scale-viewport-lg: 0.70;
+  --scale-viewport-lg-plus: 0.76;
+  --scale-viewport-xl: 0.82;
+  --scale-viewport-xl-plus: 0.88;
+}
+
+/* Variantes personalizadas basadas en altura del viewport */
+@variant h-xs (@media (min-width: 768px) and (max-height: 499px));
+@variant h-sm (@media (min-width: 768px) and (min-height: 500px) and (max-height: 549px));
+@variant h-md (@media (min-width: 768px) and (min-height: 550px) and (max-height: 599px));
+@variant h-md-plus (@media (min-width: 768px) and (min-height: 600px) and (max-height: 649px));
+@variant h-lg (@media (min-width: 768px) and (min-height: 650px) and (max-height: 679px));
+@variant h-lg-plus (@media (min-width: 768px) and (min-height: 680px) and (max-height: 719px));
+@variant h-xl (@media (min-width: 768px) and (min-height: 720px) and (max-height: 749px));
+@variant h-xl-plus (@media (min-width: 768px) and (min-height: 750px) and (max-height: 799px));
+
+body {
+  font-family: var(--font-xtr);
+  @apply flex min-h-screen flex-col justify-between antialiased;
+}
+
+@layer components {
+  .max-w-msm {
+    max-width: var(--breakpoint-msm);
+  }
+
+  .max-w-container {
+    @apply max-w-350;
+  }
+
+  .max-w-container {
+    max-width: 1224px;
+  }
+
+  .bg-primary-750-70 {
+    background-color: rgb(91 22 101 / 0.7);
+  }
+
+  .loader {
+    @apply w-5 rounded-full p-0.75 leading-[16px];
+    aspect-ratio: 1;
+    --_m:
+            conic-gradient(#0000 10%, #000), linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_m);
+    mask: var(--_m);
+    -webkit-mask-composite: source-out;
+    mask-composite: subtract;
+    animation: l3 1s infinite linear;
+  }
+
+  .ripple-span {
+    position: absolute;
+    border-radius: 50%;
+    transform: scale(0);
+    animation: var(--animate-ripple);
+    background-color: rgba(255, 255, 255, 0.838);
+    pointer-events: none;
+  }
+
+  .animate-bullet {
+    @apply relative overflow-hidden;
+
+    &::after {
+      content: "";
+      @apply absolute inset-y-0 left-0 z-20 block;
+
+      background-color: var(--color-primary-300);
+      border-radius: inherit;
+      animation: bullet-loading var(--bullet-duration, 3s) linear forwards;
+    }
+  }
+
+  .animate-bullet-paused::after {
+    animation-play-state: paused !important;
+  }
+
+  @keyframes l3 {
+    to {
+      transform: rotate(1turn);
+    }
+  }
+
+  @keyframes ripple {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+
+  @keyframes bullet-loading {
+    from {
+      width: 0%;
+    }
+    to {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,51 @@
+name: Sincronización Automática a Harness
+
+on:
+  push:
+    branches:
+      - master_dev
+      # - release/* # TODO: borrar esto
+      # - feature/*
+      # - dev
+      # - master
+
+  delete:
+    # Activa el workflow cuando borras una rama o tag
+
+jobs:
+  sync_to_harness:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout del Código
+        if: github.event_name == 'push'
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Configurar Remoto Harness
+        run: |
+          if [ "${{ github.event_name }}" == "delete" ]; then
+            git init
+          fi
+          git remote add harness "https://${{ secrets.HARNESS_USERNAME }}:${{ secrets.HARNESS_PAT }}@${{ secrets.HARNESS_REPO_URL }}"
+
+      - name: Sincronizar Cambios (Push)
+        if: github.event_name == 'push'
+        run: |
+          CURRENT_BRANCH="${{ github.ref_name }}"
+
+          if [ "$CURRENT_BRANCH" = "main" ]; then
+            echo "Detectada rama MAIN. Sincronizando hacia MASTER en Harness..."
+            git push harness main:master --force
+          else
+            echo "⬆Subiendo rama $CURRENT_BRANCH..."
+            git push harness $CURRENT_BRANCH --force
+          fi
+
+      - name: Sincronizar Borrado (Delete)
+        if: github.event_name == 'delete' && github.event.ref_type == 'branch'
+        run: |
+          BRANCH_DELETED="${{ github.event.ref }}"
+          echo "Borrando rama $BRANCH_DELETED en Harness..."
+          # El comando --delete elimina la rama remota
+          git push harness --delete $BRANCH_DELETED

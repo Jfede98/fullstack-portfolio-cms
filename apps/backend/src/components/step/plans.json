@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_step_plans",
+  "info": {
+    "displayName": "Plans",
+    "icon": "book"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "plan_tab": {
+      "type": "component",
+      "component": "block.plan-tab",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

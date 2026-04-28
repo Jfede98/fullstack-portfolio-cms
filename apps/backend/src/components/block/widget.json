@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_block_widgets",
+  "info": {
+    "displayName": "Widget"
+  },
+  "options": {},
+  "attributes": {
+    "widgets": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::widget.widget"
+    }
+  },
+  "config": {}
+}

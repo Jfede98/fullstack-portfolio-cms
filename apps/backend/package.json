@@ -1,0 +1,37 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "An CMS Strapi application - DATHA+",
+  "dependencies": {
+    "@strapi-community/plugin-seo": "^2.1.1",
+    "@strapi/plugin-documentation": "5.31.3",
+    "@strapi/provider-email-nodemailer": "^5.31.3",
+    "@strapi/provider-upload-aws-s3": "^5.31.3",
+    "@strapi/strapi": "5.31.3",
+    "pg": "8.8.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-router-dom": "^6.0.0",
+    "strapi-plugin-dynamic-enumeration-field": "^2.3.0",
+    "strapi-plugin-email-designer-v5": "^0.1.6",
+    "strapi-v5-plugin-populate-deep": "^4.0.5",
+    "styled-components": "^6.0.0",
+    "@strapi/typescript-utils": "5.31.3"
+  },
+  "scripts": {
+    "start": "strapi start"
+  },
+  "engines": {
+    "node": ">=20.0.0 <=24.x.x"
+  },
+  "strapi": {
+    "uuid": "79f3b081-8f06-43cf-8c23-0b61b2ec787a",
+    "installId": "97ea426f6bbfa858c5e902be2658f135e1fdbcd2f05d2ac04ba55324d13ffdcb"
+  },
+  "devDependencies": {
+    "@types/supertest": "^6.0.3",
+    "sqlite3": "^5.1.7",
+    "supertest": "^7.2.2"
+  }
+}

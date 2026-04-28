@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_global_rule_two_columns",
+  "info": {
+    "displayName": "RuleTwoColumn"
+  },
+  "options": {},
+  "attributes": {
+    "chooseContent": {
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "widget",
+        "lead_form"
+      ]
+    },
+    "lead_form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lead-form.lead-form",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "chooseContent"
+            },
+            "lead_form"
+          ]
+        }
+      }
+    },
+    "widget": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::widget.widget",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "chooseContent"
+            },
+            "widget"
+          ]
+        }
+      }
+    },
+    "width": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

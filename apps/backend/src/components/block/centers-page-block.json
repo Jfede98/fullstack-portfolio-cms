@@ -1,0 +1,59 @@
+{
+  "collectionName": "components_block_centers_pages",
+  "info": {
+    "displayName": "Centers Page Block",
+    "icon": "pinMap",
+    "description": "Complete block for attention centers page with filters, map and cards"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": false
+    },
+    "subtitle": {
+      "type": "text",
+      "required": false
+    },
+    "cityDropdownLabel": {
+      "type": "string",
+      "required": false
+    },
+    "servicesFilterTitle": {
+      "type": "string",
+      "required": false
+    },
+    "cities": {
+      "type": "component",
+      "component": "global.input-option",
+      "repeatable": true,
+      "required": true
+    },
+    "services": {
+      "type": "component",
+      "component": "global.input-option",
+      "repeatable": true,
+      "required": true
+    },
+    "mapConfig": {
+      "type": "component",
+      "component": "block.map",
+      "repeatable": false,
+      "required": true
+    },
+    "centers": {
+      "type": "component",
+      "component": "global.attention-center-card",
+      "repeatable": true
+    },
+    "mobileMapButtonLabel": {
+      "type": "string",
+      "required": true
+    },
+    "mobileListButtonLabel": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

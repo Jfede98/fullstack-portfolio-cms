@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_navigation_hero_slides",
+  "info": {
+    "displayName": "HeroSlide"
+  },
+  "options": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "component": "shared.banner",
+      "repeatable": false
+    },
+    "features": {
+      "type": "component",
+      "component": "global.feature-click",
+      "repeatable": true
+    },
+    "navigationLabel": {
+      "type": "string"
+    },
+    "avatar": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "lead_form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lead-form.lead-form"
+    }
+  },
+  "config": {}
+}

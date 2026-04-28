@@ -1,0 +1,50 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "baseUrl": "./",
+    "paths": {
+      "@shared-ui/components/*": ["src/lib/components/*"],
+      "@shared-ui/interfaces/*": ["src/lib/interfaces/*"],
+      "@shared-ui/config/*": ["src/lib/config/*"],
+      "@shared-ui/constants/*": ["src/lib/constants/*"],
+      "@shared-ui/hooks/*": ["src/lib/hooks/*"],
+      "@shared-ui/helpers/*": ["src/lib/helpers/*"]
+    }
+  },
+  "types": [
+    "vitest/globals",
+    "@testing-library/jest-dom",
+    "vitest/jsdom",
+    "node"
+  ],
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/lib/**/*.css",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx"
+  ],
+  "exclude": ["src/test/**/*", "**/*.test.tsx", "**/*.test.ts", "deployment/**/*"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "name": "@sitio-publico/strapi-backups",
+  "root": "libs/strapiBackups",
+  "version": "1.0.0",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "nx:run-commands",
+      "outputs": ["{projectRoot}/dist"],
+      "options": {
+        "cwd": "libs/strapiBackups",
+        "parallel": false,
+        "command": "strapi-plugin build"
+      }
+    },
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/strapiBackups",
+        "command": "strapi-plugin watch"
+      }
+    },
+    "verify": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/strapiBackups",
+        "command": "strapi-plugin verify"
+      }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/strapiBackups",
+        "command": "echo 'no action defined'"
+      },
+      "dependsOn": ["build"]
+    },
+    "test:ts:front": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/strapiSync",
+        "command": "run -T tsc -p admin/tsconfig.json"
+      }
+    },
+    "test:ts:back": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/strapiSync",
+        "command": "run -T tsc -p server/tsconfig.json"
+      }
+    },
+    "watch:link": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/strapiSync",
+        "command": "strapi-plugin watch:link"
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_block_informational_sections",
+  "info": {
+    "displayName": "InformationalSection"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false,
+      "required": true
+    },
+    "subtitle": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "button": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

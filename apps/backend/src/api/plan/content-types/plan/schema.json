@@ -1,0 +1,78 @@
+{
+  "kind": "collectionType",
+  "collectionName": "plans",
+  "info": {
+    "singularName": "plan",
+    "pluralName": "plans",
+    "displayName": "Plan"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "isRecommended": {
+      "type": "boolean",
+      "default": false
+    },
+    "isRecommendedText": {
+      "type": "string",
+      "pluginOptions": {
+        "content-manager": {
+          "visible": false
+        }
+      },
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "isRecommended"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "name": {
+      "type": "string"
+    },
+    "speedValue": {
+      "type": "string"
+    },
+    "speedUnit": {
+      "type": "enumeration",
+      "default": "megas",
+      "enum": [
+        "megas",
+        "gigas"
+      ]
+    },
+    "priceInfo": {
+      "type": "component",
+      "component": "global.price-display",
+      "repeatable": false
+    },
+    "ctaButtons": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": true
+    },
+    "benefits": {
+      "type": "component",
+      "component": "global.feature",
+      "repeatable": true
+    },
+    "apps": {
+      "type": "component",
+      "component": "shared.app",
+      "repeatable": true
+    },
+    "detailsContent": {
+      "type": "richtext"
+    },
+    "identifier": {
+      "type": "string",
+      "required": true
+    }
+  }
+}

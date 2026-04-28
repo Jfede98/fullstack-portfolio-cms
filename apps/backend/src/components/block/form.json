@@ -1,0 +1,45 @@
+{
+  "collectionName": "components_block_forms",
+  "info": {
+    "displayName": "Form"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "component",
+      "component": "global.icon",
+      "repeatable": false
+    },
+    "inputs": {
+      "type": "component",
+      "component": "global.input",
+      "repeatable": true
+    },
+    "button": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    },
+    "showBorderLine": {
+      "type": "boolean",
+      "default": true
+    },
+    "privacyCheckbox": {
+      "type": "component",
+      "component": "global.checkbox",
+      "repeatable": false
+    },
+    "statusMessage": {
+      "type": "component",
+      "component": "global.status-message",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

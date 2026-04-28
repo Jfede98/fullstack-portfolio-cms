@@ -1,0 +1,77 @@
+{
+  "collectionName": "components_shared_config_banners",
+  "info": {
+    "displayName": "ConfigBanner"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false
+    },
+    "subtitle": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false
+    },
+    "img": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "enabledOverlay": {
+      "type": "boolean",
+      "default": true
+    },
+    "useManualLink": {
+      "type": "boolean",
+      "default": false
+    },
+    "cta": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "useManualLink"
+            },
+            false
+          ]
+        }
+      },
+      "component": "global.button",
+      "repeatable": false
+    },
+    "link": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "useManualLink"
+            },
+            true
+          ]
+        }
+      }
+    },
+    "isExternal": {
+      "type": "boolean",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "useManualLink"
+            },
+            true
+          ]
+        }
+      },
+      "default": false
+    }
+  },
+  "config": {}
+}

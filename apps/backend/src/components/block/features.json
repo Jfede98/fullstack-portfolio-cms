@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_block_benefits_sections",
+  "info": {
+    "displayName": "Features"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false
+    },
+    "mainItems": {
+      "type": "component",
+      "component": "global.feature-click",
+      "repeatable": true
+    },
+    "layoutVariant": {
+      "type": "enumeration",
+      "default": "horizontal",
+      "enum": [
+        "horizontal",
+        "vertical"
+      ]
+    }
+  },
+  "config": {}
+}

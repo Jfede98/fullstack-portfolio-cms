@@ -1,0 +1,27 @@
+{
+  "collectionName": "components_global_status_messages",
+  "info": {
+    "displayName": "StatusMessage"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "buttonLabel": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "success",
+        "error",
+        "duplicated"
+      ]
+    }
+  },
+  "config": {}
+}

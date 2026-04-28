@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_block_streaming_plans",
+  "info": {
+    "displayName": "StreamingPlans"
+  },
+  "options": {},
+  "attributes": {
+    "plans": {
+      "type": "component",
+      "component": "shared.streaming-card",
+      "repeatable": true
+    },
+    "title": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false
+    },
+    "subtitle": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_error_semiautomatic_errors",
+  "info": {
+    "displayName": "SemiautomaticError",
+    "icon": "exit"
+  },
+  "options": {},
+  "attributes": {
+    "errorMessage": {
+      "type": "string"
+    },
+    "title": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false
+    },
+    "subtitle": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false
+    },
+    "lead_form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lead-form.lead-form"
+    }
+  },
+  "config": {}
+}

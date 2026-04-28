@@ -1,0 +1,2881 @@
+{
+  "Description": "CDK Stack Construct",
+  "Resources": {
+    "XtrimvpcstgXtrimvpcstgpublic29507E69F": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "AvailabilityZone": "us-east-1b",
+        "CidrBlock": "20.0.20.0/24",
+        "MapPublicIpOnLaunch": true,
+        "Tags": [
+          {
+            "Key": "Environment",
+            "Value": "stg"
+          },
+          {
+            "Key": "Name",
+            "Value": "Xtrim-vpc-stg"
+          },
+          {
+            "Key": "Project",
+            "Value": "Xtrim Web"
+          },
+          {
+            "Key": "Resource",
+            "Value": "VPC"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ],
+        "VpcId": "vpc-09c77d7ec6a1bcdf1"
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/Xtrim-vpc-stg/Xtrim-vpc-stg-public-2"
+      }
+    },
+    "XtrimvpcstgXtrimvpcstgpublicroute0359E961": {
+      "Type": "AWS::EC2::Route",
+      "Properties": {
+        "DestinationCidrBlock": "0.0.0.0/0",
+        "GatewayId": "igw-0353a717ccd919447",
+        "RouteTableId": "rtb-0f7d37c41e42ce60e"
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/Xtrim-vpc-stg/Xtrim-vpc-stg-public-route"
+      }
+    },
+    "XtrimvpcstgXtrimvpcstgpubrt1F3556C2E": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": "rtb-0f7d37c41e42ce60e",
+        "SubnetId": "subnet-0f8ff8c0ea2dfb69e"
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/Xtrim-vpc-stg/Xtrim-vpc-stg-pub-rt-1"
+      }
+    },
+    "XtrimvpcstgXtrimvpcstgpubrt27A5D53EE": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": "rtb-0f7d37c41e42ce60e",
+        "SubnetId": {
+          "Fn::GetAtt": [
+            "XtrimvpcstgXtrimvpcstgpublic29507E69F",
+            "SubnetId"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/Xtrim-vpc-stg/Xtrim-vpc-stg-pub-rt-2"
+      }
+    },
+    "XtrimvpcstgXtrimvpcstgisolated170B915F0": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "AvailabilityZone": "us-east-1a",
+        "CidrBlock": "20.0.21.0/24",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "Environment",
+            "Value": "stg"
+          },
+          {
+            "Key": "Name",
+            "Value": "Xtrim-vpc-stg"
+          },
+          {
+            "Key": "Project",
+            "Value": "Xtrim Web"
+          },
+          {
+            "Key": "Resource",
+            "Value": "VPC"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ],
+        "VpcId": "vpc-09c77d7ec6a1bcdf1"
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/Xtrim-vpc-stg/Xtrim-vpc-stg-isolated-1"
+      }
+    },
+    "XtrimvpcstgXtrimvpcstgisolated20EA9D589": {
+      "Type": "AWS::EC2::Subnet",
+      "Properties": {
+        "AvailabilityZone": "us-east-1b",
+        "CidrBlock": "20.0.22.0/24",
+        "MapPublicIpOnLaunch": false,
+        "Tags": [
+          {
+            "Key": "Environment",
+            "Value": "stg"
+          },
+          {
+            "Key": "Name",
+            "Value": "Xtrim-vpc-stg"
+          },
+          {
+            "Key": "Project",
+            "Value": "Xtrim Web"
+          },
+          {
+            "Key": "Resource",
+            "Value": "VPC"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ],
+        "VpcId": "vpc-09c77d7ec6a1bcdf1"
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/Xtrim-vpc-stg/Xtrim-vpc-stg-isolated-2"
+      }
+    },
+    "XtrimvpcstgXtrimvpcstgisort1C8BB1B72": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": "rtb-029524dcc27400d63",
+        "SubnetId": {
+          "Fn::GetAtt": [
+            "XtrimvpcstgXtrimvpcstgisolated170B915F0",
+            "SubnetId"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/Xtrim-vpc-stg/Xtrim-vpc-stg-iso-rt-1"
+      }
+    },
+    "XtrimvpcstgXtrimvpcstgisort2026E2F69": {
+      "Type": "AWS::EC2::SubnetRouteTableAssociation",
+      "Properties": {
+        "RouteTableId": "rtb-029524dcc27400d63",
+        "SubnetId": {
+          "Fn::GetAtt": [
+            "XtrimvpcstgXtrimvpcstgisolated20EA9D589",
+            "SubnetId"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/Xtrim-vpc-stg/Xtrim-vpc-stg-iso-rt-2"
+      }
+    },
+    "xtrimcloudfrontsgstgBD3AE4E0": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "PrivateCloudfrontSG",
+        "GroupName": "xtrim-cloudfront-sg-stg",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Environment",
+            "Value": "stg"
+          },
+          {
+            "Key": "Name",
+            "Value": "xtrim-cloudfront-sg-stg"
+          },
+          {
+            "Key": "Project",
+            "Value": "Xtrim Web"
+          },
+          {
+            "Key": "Resource",
+            "Value": "SecurityGroup"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ],
+        "VpcId": "vpc-09c77d7ec6a1bcdf1"
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-cloudfront-sg-stg/xtrim-cloudfront-sg-stg/Resource"
+      }
+    },
+    "xtrimstrapiec2sgstg1041D958": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "EC2-SG",
+        "GroupName": "xtrim-strapi-ec2-sg-stg",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Environment",
+            "Value": "stg"
+          },
+          {
+            "Key": "Name",
+            "Value": "xtrim-strapi-ec2-sg-stg"
+          },
+          {
+            "Key": "Project",
+            "Value": "Xtrim Web"
+          },
+          {
+            "Key": "Resource",
+            "Value": "SecurityGroup"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ],
+        "VpcId": "vpc-09c77d7ec6a1bcdf1"
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-strapi-ec2-sg-stg/xtrim-strapi-ec2-sg-stg/Resource"
+      }
+    },
+    "xtrimstrapiec2sgstgfromxtrimwebstgxtrimcloudfrontsgstg98284DC713376DC295D7": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "Description": "Allow CloudFront access on dynamic Strapi Port",
+        "FromPort": 1337,
+        "GroupId": {
+          "Fn::GetAtt": [
+            "xtrimstrapiec2sgstg1041D958",
+            "GroupId"
+          ]
+        },
+        "IpProtocol": "tcp",
+        "SourceSecurityGroupId": {
+          "Fn::GetAtt": [
+            "xtrimcloudfrontsgstgBD3AE4E0",
+            "GroupId"
+          ]
+        },
+        "ToPort": 1337
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-strapi-ec2-sg-stg/xtrim-strapi-ec2-sg-stg/from xtrimwebstgxtrimcloudfrontsgstg98284DC7:1337"
+      }
+    },
+    "xtrimstrapiec2sgstgfromIndirectPeer2269C8A01C": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "Description": "Allow proveedores on port 22",
+        "FromPort": 22,
+        "GroupId": {
+          "Fn::GetAtt": [
+            "xtrimstrapiec2sgstg1041D958",
+            "GroupId"
+          ]
+        },
+        "IpProtocol": "tcp",
+        "SourcePrefixListId": {
+          "Fn::GetAtt": [
+            "proveedoresPLstg",
+            "PrefixListId"
+          ]
+        },
+        "ToPort": 22
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-strapi-ec2-sg-stg/xtrim-strapi-ec2-sg-stg/from {IndirectPeer}:22"
+      }
+    },
+    "xtrimstrapiec2sgstgfromIndirectPeer280D4A86520": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "Description": "Allow comercialTeamInside on port 80",
+        "FromPort": 80,
+        "GroupId": {
+          "Fn::GetAtt": [
+            "xtrimstrapiec2sgstg1041D958",
+            "GroupId"
+          ]
+        },
+        "IpProtocol": "tcp",
+        "SourcePrefixListId": {
+          "Fn::GetAtt": [
+            "comercialTeamInsidePLstg",
+            "PrefixListId"
+          ]
+        },
+        "ToPort": 80
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-strapi-ec2-sg-stg/xtrim-strapi-ec2-sg-stg/from '{IndirectPeer2}':80"
+      }
+    },
+    "xtrimstrapiec2sgstgfromIndirectPeer344387CAF174": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "Description": "Allow comercialTeamInside on port 443",
+        "FromPort": 443,
+        "GroupId": {
+          "Fn::GetAtt": [
+            "xtrimstrapiec2sgstg1041D958",
+            "GroupId"
+          ]
+        },
+        "IpProtocol": "tcp",
+        "SourcePrefixListId": {
+          "Fn::GetAtt": [
+            "comercialTeamInsidePLstg",
+            "PrefixListId"
+          ]
+        },
+        "ToPort": 443
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-strapi-ec2-sg-stg/xtrim-strapi-ec2-sg-stg/from '{IndirectPeer3}':443"
+      }
+    },
+    "xtrimrdssgstg70F5BAFE": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "RDS-SG",
+        "GroupName": "xtrim-rds-sg-stg",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Environment",
+            "Value": "stg"
+          },
+          {
+            "Key": "Name",
+            "Value": "xtrim-rds-sg-stg"
+          },
+          {
+            "Key": "Project",
+            "Value": "Xtrim Web"
+          },
+          {
+            "Key": "Resource",
+            "Value": "SecurityGroup"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ],
+        "VpcId": "vpc-09c77d7ec6a1bcdf1"
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-rds-sg-stg/xtrim-rds-sg-stg/Resource"
+      }
+    },
+    "xtrimrdssgstgfromxtrimwebstgxtrimstrapiec2sgstg54BEB0635432EE215D0D": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "Description": "Rds-ingress-rule",
+        "FromPort": 5432,
+        "GroupId": {
+          "Fn::GetAtt": [
+            "xtrimrdssgstg70F5BAFE",
+            "GroupId"
+          ]
+        },
+        "IpProtocol": "tcp",
+        "SourceSecurityGroupId": {
+          "Fn::GetAtt": [
+            "xtrimstrapiec2sgstg1041D958",
+            "GroupId"
+          ]
+        },
+        "ToPort": 5432
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-rds-sg-stg/xtrim-rds-sg-stg/from xtrimwebstgxtrimstrapiec2sgstg54BEB063:5432"
+      }
+    },
+    "xtrimrdssgstgfromxtrimwebstgrdslambdastgCreateExtraDbHandlerSecurityGroup6FB94D17IndirectPort33C7587B": {
+      "Type": "AWS::EC2::SecurityGroupIngress",
+      "Properties": {
+        "Description": "Allow access from DB creation Lambda",
+        "FromPort": {
+          "Fn::GetAtt": [
+            "xtrimrdssitiopublicostgstgxtrimwebdbC4F0382D",
+            "Endpoint.Port"
+          ]
+        },
+        "GroupId": {
+          "Fn::GetAtt": [
+            "xtrimrdssgstg70F5BAFE",
+            "GroupId"
+          ]
+        },
+        "IpProtocol": "tcp",
+        "SourceSecurityGroupId": {
+          "Fn::GetAtt": [
+            "rdslambdastgCreateExtraDbHandlerSecurityGroupC3A5FF03",
+            "GroupId"
+          ]
+        },
+        "ToPort": {
+          "Fn::GetAtt": [
+            "xtrimrdssitiopublicostgstgxtrimwebdbC4F0382D",
+            "Endpoint.Port"
+          ]
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-rds-sg-stg/xtrim-rds-sg-stg/from xtrimwebstgrdslambdastgCreateExtraDbHandlerSecurityGroup6FB94D17:{IndirectPort}"
+      }
+    },
+    "proveedoresPLstg": {
+      "Type": "AWS::EC2::PrefixList",
+      "Properties": {
+        "AddressFamily": "IPv4",
+        "Entries": [
+          {
+            "Cidr": "52.4.93.75/32",
+            "Description": "bastion_datha (proveedores)"
+          },
+          {
+            "Cidr": "34.111.129.146/32",
+            "Description": "harness (proveedores)"
+          }
+        ],
+        "MaxEntries": 6,
+        "PrefixListName": "pl-xtrim-proveedores-stg",
+        "Tags": [
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/proveedoresPL-stg"
+      }
+    },
+    "comercialTeamInsidePLstg": {
+      "Type": "AWS::EC2::PrefixList",
+      "Properties": {
+        "AddressFamily": "IPv4",
+        "Entries": [
+          {
+            "Cidr": "190.154.47.92/32",
+            "Description": "proveedor (comercialTeamInside)"
+          },
+          {
+            "Cidr": "190.110.46.174/32",
+            "Description": "xtrim_casa_alex (comercialTeamInside)"
+          },
+          {
+            "Cidr": "190.154.47.202/32",
+            "Description": "xtrim_guayaquil (comercialTeamInside)"
+          },
+          {
+            "Cidr": "190.96.96.97/32",
+            "Description": "alexis (comercialTeamInside)"
+          },
+          {
+            "Cidr": "201.183.2.59/32",
+            "Description": "andrea_qa (comercialTeamInside)"
+          },
+          {
+            "Cidr": "200.63.213.15/32",
+            "Description": "xtrim_quito (comercialTeamInside)"
+          },
+          {
+            "Cidr": "200.50.232.239/32",
+            "Description": "danni (comercialTeamInside)"
+          },
+          {
+            "Cidr": "157.100.203.135/32",
+            "Description": "fernanda (comercialTeamInside)"
+          }
+        ],
+        "MaxEntries": 8,
+        "PrefixListName": "pl-xtrim-comercialteaminside-stg",
+        "Tags": [
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/comercialTeamInsidePL-stg"
+      }
+    },
+    "xtrimassetsstgBucketF8C4460E": {
+      "Type": "AWS::S3::Bucket",
+      "Properties": {
+        "BucketEncryption": {
+          "ServerSideEncryptionConfiguration": [
+            {
+              "ServerSideEncryptionByDefault": {
+                "SSEAlgorithm": "AES256"
+              }
+            }
+          ]
+        },
+        "BucketName": "xtrim-assets-stg",
+        "PublicAccessBlockConfiguration": {
+          "BlockPublicAcls": true,
+          "BlockPublicPolicy": true,
+          "IgnorePublicAcls": true,
+          "RestrictPublicBuckets": true
+        },
+        "Tags": [
+          {
+            "Key": "aws-cdk:auto-delete-objects",
+            "Value": "true"
+          },
+          {
+            "Key": "Environment",
+            "Value": "stg"
+          },
+          {
+            "Key": "Name",
+            "Value": "xtrim-assets-stg"
+          },
+          {
+            "Key": "Project",
+            "Value": "Xtrim Web"
+          },
+          {
+            "Key": "Resource",
+            "Value": "S3"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ]
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-assets-stg/Bucket/Resource"
+      }
+    },
+    "xtrimassetsstgBucketPolicy3A6F72F9": {
+      "Type": "AWS::S3::BucketPolicy",
+      "Properties": {
+        "Bucket": {
+          "Ref": "xtrimassetsstgBucketF8C4460E"
+        },
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "s3:PutBucketPolicy",
+                "s3:GetBucket*",
+                "s3:List*",
+                "s3:DeleteObject*"
+              ],
+              "Effect": "Allow",
+              "Principal": {
+                "AWS": {
+                  "Fn::GetAtt": [
+                    "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+                    "Arn"
+                  ]
+                }
+              },
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "xtrimassetsstgBucketF8C4460E",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "xtrimassetsstgBucketF8C4460E",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": "s3:GetObject",
+              "Condition": {
+                "StringEquals": {
+                  "AWS:SourceArn": {
+                    "Fn::Join": [
+                      "",
+                      [
+                        "arn:",
+                        {
+                          "Ref": "AWS::Partition"
+                        },
+                        ":cloudfront::",
+                        {
+                          "Ref": "AWS::AccountId"
+                        },
+                        ":distribution/",
+                        {
+                          "Ref": "xtrimassetscfstgDist94854DBB"
+                        }
+                      ]
+                    ]
+                  }
+                }
+              },
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "cloudfront.amazonaws.com"
+              },
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    {
+                      "Fn::GetAtt": [
+                        "xtrimassetsstgBucketF8C4460E",
+                        "Arn"
+                      ]
+                    },
+                    "/*"
+                  ]
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-assets-stg/Bucket/Policy/Resource"
+      }
+    },
+    "xtrimassetsstgBucketAutoDeleteObjectsCustomResourceD99A4D4B": {
+      "Type": "Custom::S3AutoDeleteObjects",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F",
+            "Arn"
+          ]
+        },
+        "BucketName": {
+          "Ref": "xtrimassetsstgBucketF8C4460E"
+        }
+      },
+      "DependsOn": [
+        "xtrimassetsstgBucketPolicy3A6F72F9"
+      ],
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-assets-stg/Bucket/AutoDeleteObjectsCustomResource/Default"
+      }
+    },
+    "xtrimassetsstgpublicstorybook55188E46": {
+      "Type": "Custom::AWS",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+            "Arn"
+          ]
+        },
+        "Create": {
+          "Fn::Join": [
+            "",
+            [
+              "{\"service\":\"S3\",\"action\":\"putObject\",\"parameters\":{\"Bucket\":\"",
+              {
+                "Ref": "xtrimassetsstgBucketF8C4460E"
+              },
+              "\",\"Key\":\"public-storybook/\",\"Body\":\"\"},\"physicalResourceId\":{\"id\":\"",
+              {
+                "Ref": "xtrimassetsstgBucketF8C4460E"
+              },
+              "-public-storybook/\"}}"
+            ]
+          ]
+        },
+        "InstallLatestAwsSdk": true
+      },
+      "DependsOn": [
+        "xtrimassetsstgpublicstorybookCustomResourcePolicy8825EF5D"
+      ],
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-assets-stg/public-storybook/Resource/Default"
+      }
+    },
+    "xtrimassetsstgpublicstorybookCustomResourcePolicy8825EF5D": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "s3:PutObject",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    {
+                      "Fn::GetAtt": [
+                        "xtrimassetsstgBucketF8C4460E",
+                        "Arn"
+                      ]
+                    },
+                    "/public-storybook/"
+                  ]
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "xtrimassetsstgpublicstorybookCustomResourcePolicy8825EF5D",
+        "Roles": [
+          {
+            "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-assets-stg/public-storybook/CustomResourcePolicy/Resource"
+      }
+    },
+    "xtrimassetsstgassetsadminxtrim8A8B4CB1": {
+      "Type": "Custom::AWS",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "AWS679f53fac002430cb0da5b7982bd22872D164C4C",
+            "Arn"
+          ]
+        },
+        "Create": {
+          "Fn::Join": [
+            "",
+            [
+              "{\"service\":\"S3\",\"action\":\"putObject\",\"parameters\":{\"Bucket\":\"",
+              {
+                "Ref": "xtrimassetsstgBucketF8C4460E"
+              },
+              "\",\"Key\":\"assets-admin-xtrim/\",\"Body\":\"\"},\"physicalResourceId\":{\"id\":\"",
+              {
+                "Ref": "xtrimassetsstgBucketF8C4460E"
+              },
+              "-assets-admin-xtrim/\"}}"
+            ]
+          ]
+        },
+        "InstallLatestAwsSdk": true
+      },
+      "DependsOn": [
+        "xtrimassetsstgassetsadminxtrimCustomResourcePolicyBA590819"
+      ],
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-assets-stg/assets-admin-xtrim/Resource/Default"
+      }
+    },
+    "xtrimassetsstgassetsadminxtrimCustomResourcePolicyBA590819": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "s3:PutObject",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    {
+                      "Fn::GetAtt": [
+                        "xtrimassetsstgBucketF8C4460E",
+                        "Arn"
+                      ]
+                    },
+                    "/assets-admin-xtrim/"
+                  ]
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "xtrimassetsstgassetsadminxtrimCustomResourcePolicyBA590819",
+        "Roles": [
+          {
+            "Ref": "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-assets-stg/assets-admin-xtrim/CustomResourcePolicy/Resource"
+      }
+    },
+    "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ]
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Sub": "arn:${AWS::Partition}:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/Custom::S3AutoDeleteObjectsCustomResourceProvider/Role"
+      }
+    },
+    "CustomS3AutoDeleteObjectsCustomResourceProviderHandler9D90184F": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1"
+          },
+          "S3Key": "faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6.zip"
+        },
+        "Timeout": 900,
+        "MemorySize": 128,
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs22.x",
+        "Description": {
+          "Fn::Join": [
+            "",
+            [
+              "Lambda function for auto-deleting objects in ",
+              {
+                "Ref": "xtrimassetsstgBucketF8C4460E"
+              },
+              " S3 bucket."
+            ]
+          ]
+        }
+      },
+      "DependsOn": [
+        "CustomS3AutoDeleteObjectsCustomResourceProviderRole3B1BD092"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/Custom::S3AutoDeleteObjectsCustomResourceProvider/Handler",
+        "aws:asset:path": "asset.faa95a81ae7d7373f3e1f242268f904eb748d8d0fdd306e8a6fe515a1905a7d6",
+        "aws:asset:property": "Code"
+      }
+    },
+    "xtrimassetscfstgDistOrigin1S3OriginAccessControl267AADA0": {
+      "Type": "AWS::CloudFront::OriginAccessControl",
+      "Properties": {
+        "OriginAccessControlConfig": {
+          "Name": "xtrimwebstgxtrimassetscfstgDOrigin1S3OriginAccessControl797CF35E",
+          "OriginAccessControlOriginType": "s3",
+          "SigningBehavior": "always",
+          "SigningProtocol": "sigv4"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-assets-cf-stg/Dist/Origin1/S3OriginAccessControl/Resource"
+      }
+    },
+    "xtrimassetscfstgDist94854DBB": {
+      "Type": "AWS::CloudFront::Distribution",
+      "Properties": {
+        "DistributionConfig": {
+          "Aliases": [
+            "statics.xtrim.com.ec"
+          ],
+          "Comment": "Distribuci?n para la configuraci?n de assets del sitio p?blico - Ambiente: stg",
+          "DefaultCacheBehavior": {
+            "CachePolicyId": "658327ea-f89d-4fab-a63d-7e88639e58f6",
+            "Compress": true,
+            "TargetOriginId": "xtrimwebstgxtrimassetscfstgDistOrigin11AF1A2B6",
+            "ViewerProtocolPolicy": "redirect-to-https"
+          },
+          "Enabled": true,
+          "HttpVersion": "http2",
+          "IPV6Enabled": true,
+          "Origins": [
+            {
+              "DomainName": {
+                "Fn::GetAtt": [
+                  "xtrimassetsstgBucketF8C4460E",
+                  "RegionalDomainName"
+                ]
+              },
+              "Id": "xtrimwebstgxtrimassetscfstgDistOrigin11AF1A2B6",
+              "OriginAccessControlId": {
+                "Fn::GetAtt": [
+                  "xtrimassetscfstgDistOrigin1S3OriginAccessControl267AADA0",
+                  "Id"
+                ]
+              },
+              "S3OriginConfig": {
+                "OriginAccessIdentity": ""
+              }
+            }
+          ],
+          "ViewerCertificate": {
+            "AcmCertificateArn": "arn:aws:acm:us-east-1:277790937284:certificate/893fbd9a-4e4b-476d-9e80-a2d96e054e41",
+            "MinimumProtocolVersion": "TLSv1.2_2021",
+            "SslSupportMethod": "sni-only"
+          }
+        },
+        "Tags": [
+          {
+            "Key": "Environment",
+            "Value": "stg"
+          },
+          {
+            "Key": "Name",
+            "Value": "xtrim-assets-cf-stg"
+          },
+          {
+            "Key": "Project",
+            "Value": "Xtrim Web"
+          },
+          {
+            "Key": "Resource",
+            "Value": "Cloudfront"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-assets-cf-stg/Dist/Resource"
+      }
+    },
+    "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/AWS679f53fac002430cb0da5b7982bd2287/ServiceRole/Resource"
+      }
+    },
+    "AWS679f53fac002430cb0da5b7982bd22872D164C4C": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1"
+          },
+          "S3Key": "56f7467bbde8a5efebcf57ae9e460027607099bab9f844669dcf5d800172ee5a.zip"
+        },
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs22.x",
+        "Tags": [
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ],
+        "Timeout": 120
+      },
+      "DependsOn": [
+        "AWS679f53fac002430cb0da5b7982bd2287ServiceRoleC1EA0FF2"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/AWS679f53fac002430cb0da5b7982bd2287/Resource",
+        "aws:asset:path": "asset.56f7467bbde8a5efebcf57ae9e460027607099bab9f844669dcf5d800172ee5a",
+        "aws:asset:is-bundled": false,
+        "aws:asset:property": "Code"
+      }
+    },
+    "xtrimec2instancev2stgKeyPairV6D07B4566": {
+      "Type": "AWS::EC2::KeyPair",
+      "Properties": {
+        "KeyFormat": "pem",
+        "KeyName": "xtrimwebstgxtrimec2instancev2stgKeyPairV62497EEE3",
+        "KeyType": "rsa",
+        "Tags": [
+          {
+            "Key": "Environment",
+            "Value": "stg"
+          },
+          {
+            "Key": "Name",
+            "Value": "xtrim-ec2-instance-v2-stg"
+          },
+          {
+            "Key": "Project",
+            "Value": "Xtrim Web"
+          },
+          {
+            "Key": "Resource",
+            "Value": "EC2"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-ec2-instance-v2-stg/KeyPairV6/Resource"
+      }
+    },
+    "xtrimec2instancev2stgInstanceRole25E399EA": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "ec2.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "Tags": [
+          {
+            "Key": "Environment",
+            "Value": "stg"
+          },
+          {
+            "Key": "Name",
+            "Value": "xtrim-ec2-instance-v2-stg"
+          },
+          {
+            "Key": "Project",
+            "Value": "Xtrim Web"
+          },
+          {
+            "Key": "Resource",
+            "Value": "EC2"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-ec2-instance-v2-stg/xtrim-ec2-instance-v2-stg/InstanceRole/Resource"
+      }
+    },
+    "xtrimec2instancev2stgInstanceRoleDefaultPolicy3A9CE087": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:DescribeSecret"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:",
+                    {
+                      "Ref": "AWS::Partition"
+                    },
+                    ":secretsmanager:us-east-1:",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":secret:stg/xtrim-sitio-publico-infra-inputs/environment-??????"
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": [
+                "s3:PutObject",
+                "s3:GetObject",
+                "s3:ListBucket",
+                "s3:DeleteObject"
+              ],
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "xtrimassetsstgBucketF8C4460E",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "xtrimassetsstgBucketF8C4460E",
+                          "Arn"
+                        ]
+                      },
+                      "/*"
+                    ]
+                  ]
+                },
+                "arn:aws:s3:::statics-xtrim-sitio-publico",
+                "arn:aws:s3:::statics-xtrim-sitio-publico/*"
+              ]
+            },
+            {
+              "Action": [
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:DescribeSecret"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Ref": "xtrimrdssitiopublicostgstgxtrimwebdbSecretAttachment1648D264"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "xtrimec2instancev2stgInstanceRoleDefaultPolicy3A9CE087",
+        "Roles": [
+          {
+            "Ref": "xtrimec2instancev2stgInstanceRole25E399EA"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-ec2-instance-v2-stg/xtrim-ec2-instance-v2-stg/InstanceRole/DefaultPolicy/Resource"
+      }
+    },
+    "xtrimec2instancev2stgInstanceProfile46AF3991": {
+      "Type": "AWS::IAM::InstanceProfile",
+      "Properties": {
+        "Roles": [
+          {
+            "Ref": "xtrimec2instancev2stgInstanceRole25E399EA"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-ec2-instance-v2-stg/xtrim-ec2-instance-v2-stg/InstanceProfile"
+      }
+    },
+    "xtrimec2instancev2stg7C41DC30": {
+      "Type": "AWS::EC2::Instance",
+      "Properties": {
+        "AvailabilityZone": "us-east-1a",
+        "IamInstanceProfile": {
+          "Ref": "xtrimec2instancev2stgInstanceProfile46AF3991"
+        },
+        "ImageId": {
+          "Ref": "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61x8664C96584B6F00A464EAD1953AFF4B05118Parameter"
+        },
+        "InstanceType": "t3.small",
+        "KeyName": {
+          "Ref": "xtrimec2instancev2stgKeyPairV6D07B4566"
+        },
+        "SecurityGroupIds": [
+          {
+            "Fn::GetAtt": [
+              "xtrimstrapiec2sgstg1041D958",
+              "GroupId"
+            ]
+          }
+        ],
+        "SubnetId": "subnet-0f8ff8c0ea2dfb69e",
+        "Tags": [
+          {
+            "Key": "Environment",
+            "Value": "stg"
+          },
+          {
+            "Key": "Name",
+            "Value": "xtrim-ec2-instance-v2-stg"
+          },
+          {
+            "Key": "Project",
+            "Value": "Xtrim Web"
+          },
+          {
+            "Key": "Resource",
+            "Value": "EC2"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ],
+        "UserData": {
+          "Fn::Base64": "#!/bin/bash\n#!/bin/bash\nset -e\n\nSTAGE=\"stg\" \nAWS_REGION=\"us-east-1\"\nSECRET_NAME=\"stg/xtrim-sitio-publico-infra-inputs/environment\"\n\nCERT_FILE=\"/etc/ssl/cf/cert.pem\"\nKEY_FILE=\"/etc/ssl/cf/cert.key\"\nmkdir -p /etc/ssl/cf\nmkdir -p /home/ec2-user/app/$STAGE\n\nif [ \"$STAGE\" == \"stg\" ]; then\n  mkdir -p /home/ec2-user/app/dev\nfi\n\ndnf update -y\ndnf upgrade -y\ndnf install -y --allowerasing postgresql17 nginx unzip curl wget jq\n\nSECRET_JSON=$(aws secretsmanager get-secret-value --secret-id $SECRET_NAME --region $AWS_REGION --query SecretString --output text)\n\necho \"$SECRET_JSON\" | jq -r '.CERTIFICATE' > $CERT_FILE\necho \"$SECRET_JSON\" | jq -r '.PRIVATE_KEY' > $KEY_FILE\nSTRAPI_URL=$(echo \"$SECRET_JSON\" | jq -r '.STRAPI_URL')\nDEV_STRAPI_URL=$(echo \"$SECRET_JSON\" | jq -r '.DEV_STRAPI_URL')\n\nif [ \"$(cat $CERT_FILE)\" == \"null\" ] || [ ! -s \"$CERT_FILE\" ]; then\n  rm -f $CERT_FILE $KEY_FILE\n  echo \"SSL: Certificados no encontrados o inv?lidos. Continuando en modo HTTP.\"\nfi\n\nENV_FILE=\"/home/ec2-user/app/$STAGE/.env\"\necho \"# Generated by CDK UserData\" > $ENV_FILE \necho \"$SECRET_JSON\" | jq -r 'to_entries | .[] | \"\\(.key)=\\(.value)\"' >> $ENV_FILE\nchown ec2-user:ec2-user $ENV_FILE\n\n\nif [ \"$STAGE\" == \"stg\" ]; then\n  ENV_FILE_DEV=\"/home/ec2-user/app/dev/.env\"\n  \n  echo \"# Generated by CDK UserData - DEV\" > \"$ENV_FILE_DEV\"\n  \n  echo \"$SECRET_JSON\" | jq -r \"to_entries | .[] | \n    if .key == \\\"PORT\\\" then .value = \\\"1338\\\" \n    elif .key == \\\"STRAPI_URL\\\" then .value = \\\"$DEV_STRAPI_URL\\\" \n    else . end | \\\"\\(.key)=\\(.value)\\\"\" >> \"$ENV_FILE_DEV\"\n    \n  chown ec2-user:ec2-user \"$ENV_FILE_DEV\"\nfi\n\nsudo -u ec2-user bash <<'EOF'\ncd ~\ncurl -fsSL https://bun.sh/install | bash\ncurl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.4/install.sh | bash\n\nexport NVM_DIR=\"$HOME/.nvm\"\n[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"\n\nnvm install --lts\nnpm install -g pm2\n\ncat <<'EOT' >> ~/.bashrc\nexport NVM_DIR=\"$HOME/.nvm\"\n[ -s \"$NVM_DIR/nvm.sh\" ] && . \"$NVM_DIR/nvm.sh\"\nexport BUN_INSTALL=\"$HOME/.bun\"\nexport PATH=\"$BUN_INSTALL/bin:$PATH\"\nEOT\nEOF\n\nmkdir -p /etc/nginx/snippets\n\ncat <<EOF > /etc/nginx/snippets/timeout.conf\nproxy_connect_timeout 60s;\nproxy_send_timeout 60s;\nproxy_read_timeout 60s;\nsend_timeout 60s;\nEOF\n\ncat <<EOF > /etc/nginx/snippets/security.conf\nadd_header X-Content-Type-Options nosniff always;\nadd_header X-Frame-Options DENY always;\nadd_header X-XSS-Protection \"1; mode=block\" always;\nadd_header Referrer-Policy \"no-referrer\" always;\nadd_header Strict-Transport-Security \"max-age=31536000; includeSubDomains\" always;\nEOF\n\ncat <<EOF > /etc/nginx/snippets/proxy_headers.conf\nproxy_set_header Host \\$host;\nproxy_set_header X-Real-IP \\$remote_addr;\nproxy_set_header X-Forwarded-For \\$proxy_add_x_forwarded_for;\nproxy_set_header X-Forwarded-Proto \\$scheme;\nEOF\n\ncat <<EOF > /etc/nginx/snippets/ssl_params.conf\nssl_protocols TLSv1.2 TLSv1.3;\nssl_ciphers 'ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384';\nssl_prefer_server_ciphers on;\nssl_session_cache shared:SSL:10m;\nssl_session_timeout 1h;\nEOF\n\nsed -i '/^    server {/,/^    }/d' /etc/nginx/nginx.conf\n\nif [ -f \"$CERT_FILE\" ] && [ -f \"$KEY_FILE\" ]; then\n  cat <<EOF > /etc/nginx/conf.d/main.conf\nserver {\n  listen 80 default_server;\n  server_name _;\n  return 301 https://\\$host\\$request_uri;\n}\n\nserver {\n  listen 443 ssl http2;\n  server_name $STRAPI_URL;\n  \n  ssl_certificate $CERT_FILE;\n  ssl_certificate_key $KEY_FILE;\n  \n  include /etc/nginx/snippets/ssl_params.conf;\n  include /etc/nginx/snippets/security.conf;\n  include /etc/nginx/snippets/timeout.conf;\n\n  location / {\n    proxy_pass http://localhost:1337;\n    include /etc/nginx/snippets/proxy_headers.conf;\n    client_max_body_size 20M;\n  }\n}\n\n$( [[ \"$STAGE\" == \"stg\" ]] && echo \"\nserver {\n  listen 443 ssl http2;\n  server_name $DEV_STRAPI_URL;\n  \n  ssl_certificate $CERT_FILE;\n  ssl_certificate_key $KEY_FILE;\n  \n  include /etc/nginx/snippets/ssl_params.conf;\n  include /etc/nginx/snippets/security.conf;\n  include /etc/nginx/snippets/timeout.conf;\n\n  location / {\n    proxy_pass http://localhost:1338;\n    include /etc/nginx/snippets/proxy_headers.conf;\n    client_max_body_size 20M;\n  }\n}\" \n)\nEOF\nelse\n  cat <<EOF > /etc/nginx/conf.d/main.conf\nserver {\n  listen 80 default_server;\n  server_name _;\n  \n  include /etc/nginx/snippets/security.conf;\n  include /etc/nginx/snippets/timeout.conf;\n\n  location / {\n    proxy_pass http://localhost:1337;\n    include /etc/nginx/snippets/proxy_headers.conf;\n    client_max_body_size 5M;\n  }\n\n  $( [[ \"$STAGE\" == \"stg\" ]] && echo \"\n  location /dev/ {\n    proxy_pass http://localhost:1338;\n    include /etc/nginx/snippets/proxy_headers.conf;\n    client_max_body_size 5M;\n  }\" )\n}\nEOF\nfi\n\nrm -f /etc/nginx/conf.d/default.conf\n\nnginx -t\nsudo systemctl enable --now nginx\nsudo systemctl restart nginx\n\necho \"Change ownership of app folder\"\nsudo chown -R ec2-user:ec2-user /home/ec2-user/app\necho \"Setup finished for stage $STAGE in region $AWS_REGION\""
+        }
+      },
+      "DependsOn": [
+        "xtrimec2instancev2stgInstanceRoleDefaultPolicy3A9CE087",
+        "xtrimec2instancev2stgInstanceRole25E399EA"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-ec2-instance-v2-stg/xtrim-ec2-instance-v2-stg/Resource"
+      }
+    },
+    "xtrimec2instancev2stgEIPAssocDD201861": {
+      "Type": "AWS::EC2::EIPAssociation",
+      "Properties": {
+        "AllocationId": "eipalloc-0a22c19175a793a99",
+        "InstanceId": {
+          "Ref": "xtrimec2instancev2stg7C41DC30"
+        }
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-ec2-instance-v2-stg/EIPAssoc"
+      }
+    },
+    "xtrimrdssitiopublicostgstgxtrimwebdbSubnetGroupEB931F72": {
+      "Type": "AWS::RDS::DBSubnetGroup",
+      "Properties": {
+        "DBSubnetGroupDescription": "Subnet group for stg-xtrim-web-db database",
+        "SubnetIds": [
+          {
+            "Fn::GetAtt": [
+              "XtrimvpcstgXtrimvpcstgisolated170B915F0",
+              "SubnetId"
+            ]
+          },
+          {
+            "Fn::GetAtt": [
+              "XtrimvpcstgXtrimvpcstgisolated20EA9D589",
+              "SubnetId"
+            ]
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Environment",
+            "Value": "stg"
+          },
+          {
+            "Key": "Name",
+            "Value": "xtrim-rds-sitio-publico-stg"
+          },
+          {
+            "Key": "Project",
+            "Value": "Xtrim Web"
+          },
+          {
+            "Key": "Resource",
+            "Value": "RDS"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-rds-sitio-publico-stg/stg-xtrim-web-db/SubnetGroup/Default"
+      }
+    },
+    "xtrimwebstgxtrimrdssitiopublicostgstgxtrimwebdbSecret8B645B923fdaad7efa858a3daf9490cf0a702aeb": {
+      "Type": "AWS::SecretsManager::Secret",
+      "Properties": {
+        "Description": {
+          "Fn::Join": [
+            "",
+            [
+              "Generated by the CDK for stack: ",
+              {
+                "Ref": "AWS::StackName"
+              }
+            ]
+          ]
+        },
+        "GenerateSecretString": {
+          "ExcludeCharacters": " %+~`#$&*()|[]{}:;<>?!'/@\"\\",
+          "GenerateStringKey": "password",
+          "PasswordLength": 30,
+          "SecretStringTemplate": "{\"username\":\"strapi\"}"
+        },
+        "Name": "stg/xtrim-db-credentials/environment",
+        "Tags": [
+          {
+            "Key": "Environment",
+            "Value": "stg"
+          },
+          {
+            "Key": "Name",
+            "Value": "xtrim-rds-sitio-publico-stg"
+          },
+          {
+            "Key": "Project",
+            "Value": "Xtrim Web"
+          },
+          {
+            "Key": "Resource",
+            "Value": "RDS"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ]
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-rds-sitio-publico-stg/stg-xtrim-web-db/Secret/Resource"
+      }
+    },
+    "xtrimrdssitiopublicostgstgxtrimwebdbSecretAttachment1648D264": {
+      "Type": "AWS::SecretsManager::SecretTargetAttachment",
+      "Properties": {
+        "SecretId": {
+          "Ref": "xtrimwebstgxtrimrdssitiopublicostgstgxtrimwebdbSecret8B645B923fdaad7efa858a3daf9490cf0a702aeb"
+        },
+        "TargetId": {
+          "Ref": "xtrimrdssitiopublicostgstgxtrimwebdbC4F0382D"
+        },
+        "TargetType": "AWS::RDS::DBInstance"
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-rds-sitio-publico-stg/stg-xtrim-web-db/Secret/Attachment/Resource"
+      }
+    },
+    "xtrimrdssitiopublicostgstgxtrimwebdbC4F0382D": {
+      "Type": "AWS::RDS::DBInstance",
+      "Properties": {
+        "AllocatedStorage": "20",
+        "BackupRetentionPeriod": 7,
+        "CopyTagsToSnapshot": true,
+        "DBInstanceClass": "db.t3.micro",
+        "DBName": "strapi",
+        "DBSubnetGroupName": {
+          "Ref": "xtrimrdssitiopublicostgstgxtrimwebdbSubnetGroupEB931F72"
+        },
+        "DeletionProtection": false,
+        "Engine": "postgres",
+        "EngineVersion": "17.7",
+        "MasterUserPassword": {
+          "Fn::Join": [
+            "",
+            [
+              "{{resolve:secretsmanager:",
+              {
+                "Ref": "xtrimwebstgxtrimrdssitiopublicostgstgxtrimwebdbSecret8B645B923fdaad7efa858a3daf9490cf0a702aeb"
+              },
+              ":SecretString:password::}}"
+            ]
+          ]
+        },
+        "MasterUsername": "strapi",
+        "PubliclyAccessible": false,
+        "StorageType": "gp2",
+        "Tags": [
+          {
+            "Key": "Environment",
+            "Value": "stg"
+          },
+          {
+            "Key": "Name",
+            "Value": "xtrim-rds-sitio-publico-stg"
+          },
+          {
+            "Key": "Project",
+            "Value": "Xtrim Web"
+          },
+          {
+            "Key": "Resource",
+            "Value": "RDS"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ],
+        "VPCSecurityGroups": [
+          {
+            "Fn::GetAtt": [
+              "xtrimrdssgstg70F5BAFE",
+              "GroupId"
+            ]
+          }
+        ]
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/xtrim-rds-sitio-publico-stg/stg-xtrim-web-db/Resource"
+      }
+    },
+    "infraoutputssecretlambdastgInfraOutputsSecretHandlerServiceRole38601C2D": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "infra-outputs-secret-lambda-stg"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/infra-outputs-secret-lambda-stg/InfraOutputsSecretHandler/ServiceRole/Resource"
+      }
+    },
+    "infraoutputssecretlambdastgInfraOutputsSecretHandlerServiceRoleDefaultPolicyE9CD01BC": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "secretsmanager:CreateSecret",
+                "secretsmanager:PutSecretValue",
+                "secretsmanager:DescribeSecret"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:aws:secretsmanager:us-east-1:",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":secret:stg/xtrim-sitio-publico-infra-outputs/environment*"
+                  ]
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "infraoutputssecretlambdastgInfraOutputsSecretHandlerServiceRoleDefaultPolicyE9CD01BC",
+        "Roles": [
+          {
+            "Ref": "infraoutputssecretlambdastgInfraOutputsSecretHandlerServiceRole38601C2D"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/infra-outputs-secret-lambda-stg/InfraOutputsSecretHandler/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "infraoutputssecretlambdastgInfraOutputsSecretHandlerC1D57BF8": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1"
+          },
+          "S3Key": "e862cd94a6b10ab2ad7c464423793644e2547e6bf20a48a993fc3e2f10d4fe91.zip"
+        },
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "infraoutputssecretlambdastgInfraOutputsSecretHandlerServiceRole38601C2D",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs24.x",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "infra-outputs-secret-lambda-stg"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ],
+        "Timeout": 30
+      },
+      "DependsOn": [
+        "infraoutputssecretlambdastgInfraOutputsSecretHandlerServiceRoleDefaultPolicyE9CD01BC",
+        "infraoutputssecretlambdastgInfraOutputsSecretHandlerServiceRole38601C2D"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/infra-outputs-secret-lambda-stg/InfraOutputsSecretHandler/Resource",
+        "aws:asset:path": "asset.e862cd94a6b10ab2ad7c464423793644e2547e6bf20a48a993fc3e2f10d4fe91",
+        "aws:asset:is-bundled": true,
+        "aws:asset:property": "Code"
+      }
+    },
+    "InfraOutputsSecretProviderframeworkonEventServiceRoleDBF70CC6": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/InfraOutputsSecretProvider/framework-onEvent/ServiceRole/Resource"
+      }
+    },
+    "InfraOutputsSecretProviderframeworkonEventServiceRoleDefaultPolicyFD4D03F3": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "lambda:InvokeFunction",
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "infraoutputssecretlambdastgInfraOutputsSecretHandlerC1D57BF8",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "infraoutputssecretlambdastgInfraOutputsSecretHandlerC1D57BF8",
+                          "Arn"
+                        ]
+                      },
+                      ":*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": "lambda:GetFunction",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "infraoutputssecretlambdastgInfraOutputsSecretHandlerC1D57BF8",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "InfraOutputsSecretProviderframeworkonEventServiceRoleDefaultPolicyFD4D03F3",
+        "Roles": [
+          {
+            "Ref": "InfraOutputsSecretProviderframeworkonEventServiceRoleDBF70CC6"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/InfraOutputsSecretProvider/framework-onEvent/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "InfraOutputsSecretProviderframeworkonEvent44D54B85": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1"
+          },
+          "S3Key": "07a90cc3efdfc34da22208dcd9d211f06f5b0e01b21e778edc7c3966b1f61d57.zip"
+        },
+        "Description": "AWS CDK resource provider framework - onEvent (xtrim-web-stg/InfraOutputsSecretProvider)",
+        "Environment": {
+          "Variables": {
+            "USER_ON_EVENT_FUNCTION_ARN": {
+              "Fn::GetAtt": [
+                "infraoutputssecretlambdastgInfraOutputsSecretHandlerC1D57BF8",
+                "Arn"
+              ]
+            }
+          }
+        },
+        "Handler": "framework.onEvent",
+        "LoggingConfig": {
+          "ApplicationLogLevel": "FATAL",
+          "LogFormat": "JSON"
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "InfraOutputsSecretProviderframeworkonEventServiceRoleDBF70CC6",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs22.x",
+        "Tags": [
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ],
+        "Timeout": 900
+      },
+      "DependsOn": [
+        "InfraOutputsSecretProviderframeworkonEventServiceRoleDefaultPolicyFD4D03F3",
+        "InfraOutputsSecretProviderframeworkonEventServiceRoleDBF70CC6"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/InfraOutputsSecretProvider/framework-onEvent/Resource",
+        "aws:asset:path": "asset.07a90cc3efdfc34da22208dcd9d211f06f5b0e01b21e778edc7c3966b1f61d57",
+        "aws:asset:is-bundled": false,
+        "aws:asset:property": "Code"
+      }
+    },
+    "InfraOutputsSecret": {
+      "Type": "AWS::CloudFormation::CustomResource",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "InfraOutputsSecretProviderframeworkonEvent44D54B85",
+            "Arn"
+          ]
+        },
+        "SecretName": "stg/xtrim-sitio-publico-infra-outputs/environment",
+        "SecretDescription": "IDs de infraestructura generados por CDK",
+        "SecretValue": {
+          "Fn::Join": [
+            "",
+            [
+              "{\"REGION\":\"us-east-1\",\"VPC_ID\":\"vpc-09c77d7ec6a1bcdf1\",\"PUBLIC_SUBNET_IGW\":\"subnet-0f8ff8c0ea2dfb69e,",
+              {
+                "Fn::GetAtt": [
+                  "XtrimvpcstgXtrimvpcstgpublic29507E69F",
+                  "SubnetId"
+                ]
+              },
+              "\",\"PRIVATE_SUBNET_NAT\":\"subnet-088d9bc1f061c9ad6,subnet-0aee7520f011651b5\",\"PRIVATE_SUBNET_WIHOUT_NAT\":\"",
+              {
+                "Fn::GetAtt": [
+                  "XtrimvpcstgXtrimvpcstgisolated170B915F0",
+                  "SubnetId"
+                ]
+              },
+              ",",
+              {
+                "Fn::GetAtt": [
+                  "XtrimvpcstgXtrimvpcstgisolated20EA9D589",
+                  "SubnetId"
+                ]
+              },
+              "\",\"EC2_SG\":\"",
+              {
+                "Fn::GetAtt": [
+                  "xtrimstrapiec2sgstg1041D958",
+                  "GroupId"
+                ]
+              },
+              "\",\"CLOUDFRONT_FRONTEND_SG\":\"",
+              {
+                "Fn::GetAtt": [
+                  "xtrimcloudfrontsgstgBD3AE4E0",
+                  "GroupId"
+                ]
+              },
+              "\",\"CLOUDFRONT_ASSETS_ENDPOINT\":\"",
+              {
+                "Fn::GetAtt": [
+                  "xtrimassetscfstgDist94854DBB",
+                  "DomainName"
+                ]
+              },
+              "\",\"CLOUDFRONT_ASSETS_DISTRIBUTION_ID\":\"",
+              {
+                "Ref": "xtrimassetscfstgDist94854DBB"
+              },
+              "\",\"RDS_SG\":\"",
+              {
+                "Fn::GetAtt": [
+                  "xtrimrdssgstg70F5BAFE",
+                  "GroupId"
+                ]
+              },
+              "\",\"RDS_ENDPOINT\":\"",
+              {
+                "Fn::GetAtt": [
+                  "xtrimrdssitiopublicostgstgxtrimwebdbC4F0382D",
+                  "Endpoint.Address"
+                ]
+              },
+              "\",\"EC2_PRIVATE_IP\":\"",
+              {
+                "Fn::GetAtt": [
+                  "xtrimec2instancev2stg7C41DC30",
+                  "PrivateIp"
+                ]
+              },
+              "\",\"EC2_PUBLIC_DNS\":\"",
+              {
+                "Fn::GetAtt": [
+                  "xtrimec2instancev2stg7C41DC30",
+                  "PublicDnsName"
+                ]
+              },
+              "\",\"EC2_PUBLIC_IP\":\"",
+              {
+                "Fn::GetAtt": [
+                  "xtrimec2instancev2stg7C41DC30",
+                  "PublicIp"
+                ]
+              },
+              "\",\"S3_BUCKET_NAME\":\"",
+              {
+                "Ref": "xtrimassetsstgBucketF8C4460E"
+              },
+              "\",\"SSM_EC2_SSH_PRIVATE_KEY_REFERENCE\":\"/ec2/keypair/",
+              {
+                "Fn::GetAtt": [
+                  "xtrimec2instancev2stgKeyPairV6D07B4566",
+                  "KeyPairId"
+                ]
+              },
+              "\",\"S3_STORYBOOK_FOLDER\":\"public-storybook\",\"S3_ASSETS_FOLDER\":\"assets-admin-xtrim\",\"WAF_ARN\":\"",
+              {
+                "Fn::ImportValue": "xtrim-web-waf-stg:ExportsOutputFnGetAttxtrimwebwafstg77C8A9FCArn88D49E25"
+              },
+              "\"}"
+            ]
+          ]
+        },
+        "UpdateToken": "1773038109945"
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/InfraOutputsSecret/Default"
+      }
+    },
+    "rdslambdastgCreateExtraDbHandlerServiceRole00FB009F": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          },
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaVPCAccessExecutionRole"
+              ]
+            ]
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "rds-lambda-stg"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/rds-lambda-stg/CreateExtraDbHandler/ServiceRole/Resource"
+      }
+    },
+    "rdslambdastgCreateExtraDbHandlerServiceRoleDefaultPolicy04E1C0BB": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": [
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:DescribeSecret"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Ref": "xtrimrdssitiopublicostgstgxtrimwebdbSecretAttachment1648D264"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "rdslambdastgCreateExtraDbHandlerServiceRoleDefaultPolicy04E1C0BB",
+        "Roles": [
+          {
+            "Ref": "rdslambdastgCreateExtraDbHandlerServiceRole00FB009F"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/rds-lambda-stg/CreateExtraDbHandler/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "rdslambdastgCreateExtraDbHandlerSecurityGroupC3A5FF03": {
+      "Type": "AWS::EC2::SecurityGroup",
+      "Properties": {
+        "GroupDescription": "Automatic security group for Lambda Function xtrimwebstgrdslambdastgCreateExtraDbHandlerAAE9929F",
+        "SecurityGroupEgress": [
+          {
+            "CidrIp": "0.0.0.0/0",
+            "Description": "Allow all outbound traffic by default",
+            "IpProtocol": "-1"
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "rds-lambda-stg"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ],
+        "VpcId": "vpc-09c77d7ec6a1bcdf1"
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/rds-lambda-stg/CreateExtraDbHandler/SecurityGroup/Resource"
+      }
+    },
+    "rdslambdastgCreateExtraDbHandler9A62D13A": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1"
+          },
+          "S3Key": "e0b976e5237c8cc029968b47b0d1e8059cf0a43b8d44c7d5b94f014f02ce49c3.zip"
+        },
+        "Environment": {
+          "Variables": {
+            "SECRET_ARN": {
+              "Ref": "xtrimrdssitiopublicostgstgxtrimwebdbSecretAttachment1648D264"
+            },
+            "TEST_DB_NAME": "strapi-dev"
+          }
+        },
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "rdslambdastgCreateExtraDbHandlerServiceRole00FB009F",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs24.x",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "rds-lambda-stg"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ],
+        "Timeout": 30,
+        "VpcConfig": {
+          "SecurityGroupIds": [
+            {
+              "Fn::GetAtt": [
+                "rdslambdastgCreateExtraDbHandlerSecurityGroupC3A5FF03",
+                "GroupId"
+              ]
+            }
+          ],
+          "SubnetIds": [
+            "subnet-088d9bc1f061c9ad6",
+            "subnet-0aee7520f011651b5"
+          ]
+        }
+      },
+      "DependsOn": [
+        "rdslambdastgCreateExtraDbHandlerServiceRoleDefaultPolicy04E1C0BB",
+        "rdslambdastgCreateExtraDbHandlerServiceRole00FB009F"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/rds-lambda-stg/CreateExtraDbHandler/Resource",
+        "aws:asset:path": "asset.e0b976e5237c8cc029968b47b0d1e8059cf0a43b8d44c7d5b94f014f02ce49c3",
+        "aws:asset:is-bundled": true,
+        "aws:asset:property": "Code"
+      }
+    },
+    "DbProviderframeworkonEventServiceRole84A4C3E9": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/DbProvider/framework-onEvent/ServiceRole/Resource"
+      }
+    },
+    "DbProviderframeworkonEventServiceRoleDefaultPolicy06E4D563": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "lambda:InvokeFunction",
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "rdslambdastgCreateExtraDbHandler9A62D13A",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "rdslambdastgCreateExtraDbHandler9A62D13A",
+                          "Arn"
+                        ]
+                      },
+                      ":*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": "lambda:GetFunction",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "rdslambdastgCreateExtraDbHandler9A62D13A",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "DbProviderframeworkonEventServiceRoleDefaultPolicy06E4D563",
+        "Roles": [
+          {
+            "Ref": "DbProviderframeworkonEventServiceRole84A4C3E9"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/DbProvider/framework-onEvent/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "DbProviderframeworkonEvent61950187": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1"
+          },
+          "S3Key": "07a90cc3efdfc34da22208dcd9d211f06f5b0e01b21e778edc7c3966b1f61d57.zip"
+        },
+        "Description": "AWS CDK resource provider framework - onEvent (xtrim-web-stg/DbProvider)",
+        "Environment": {
+          "Variables": {
+            "USER_ON_EVENT_FUNCTION_ARN": {
+              "Fn::GetAtt": [
+                "rdslambdastgCreateExtraDbHandler9A62D13A",
+                "Arn"
+              ]
+            }
+          }
+        },
+        "Handler": "framework.onEvent",
+        "LoggingConfig": {
+          "ApplicationLogLevel": "FATAL",
+          "LogFormat": "JSON"
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "DbProviderframeworkonEventServiceRole84A4C3E9",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs22.x",
+        "Tags": [
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ],
+        "Timeout": 900
+      },
+      "DependsOn": [
+        "DbProviderframeworkonEventServiceRoleDefaultPolicy06E4D563",
+        "DbProviderframeworkonEventServiceRole84A4C3E9"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/DbProvider/framework-onEvent/Resource",
+        "aws:asset:path": "asset.07a90cc3efdfc34da22208dcd9d211f06f5b0e01b21e778edc7c3966b1f61d57",
+        "aws:asset:is-bundled": false,
+        "aws:asset:property": "Code"
+      }
+    },
+    "ExtraDatabaseResource": {
+      "Type": "AWS::CloudFormation::CustomResource",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "DbProviderframeworkonEvent61950187",
+            "Arn"
+          ]
+        }
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/ExtraDatabaseResource/Default"
+      }
+    },
+    "synckeylambdastgSyncKeyPairHandlerV3ServiceRole4F8CBCEF": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "sync-key-lambda-stg"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ]
+      },
+      "DependsOn": [
+        "InfraOutputsSecret"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/sync-key-lambda-stg/SyncKeyPairHandlerV3/ServiceRole/Resource"
+      }
+    },
+    "synckeylambdastgSyncKeyPairHandlerV3ServiceRoleDefaultPolicy9992ED6C": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "ssm:GetParameter",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:aws:ssm:us-east-1:",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":parameter/ec2/keypair/",
+                    {
+                      "Fn::GetAtt": [
+                        "xtrimec2instancev2stgKeyPairV6D07B4566",
+                        "KeyPairId"
+                      ]
+                    }
+                  ]
+                ]
+              }
+            },
+            {
+              "Action": [
+                "secretsmanager:GetSecretValue",
+                "secretsmanager:PutSecretValue",
+                "secretsmanager:DescribeSecret"
+              ],
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::Join": [
+                  "",
+                  [
+                    "arn:aws:secretsmanager:us-east-1:",
+                    {
+                      "Ref": "AWS::AccountId"
+                    },
+                    ":secret:stg/xtrim-sitio-publico-infra-outputs/environment-*"
+                  ]
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "synckeylambdastgSyncKeyPairHandlerV3ServiceRoleDefaultPolicy9992ED6C",
+        "Roles": [
+          {
+            "Ref": "synckeylambdastgSyncKeyPairHandlerV3ServiceRole4F8CBCEF"
+          }
+        ]
+      },
+      "DependsOn": [
+        "InfraOutputsSecret"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/sync-key-lambda-stg/SyncKeyPairHandlerV3/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "synckeylambdastgSyncKeyPairHandlerV3F8E1E748": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1"
+          },
+          "S3Key": "fab2595ad2940ca2f28f0abe085f24cfb8550013a8e925b8cbf91d011f719057.zip"
+        },
+        "Environment": {
+          "Variables": {
+            "KEY_PAIR_ID": {
+              "Fn::GetAtt": [
+                "xtrimec2instancev2stgKeyPairV6D07B4566",
+                "KeyPairId"
+              ]
+            },
+            "KEY_PAIR_NAME": {
+              "Ref": "xtrimec2instancev2stgKeyPairV6D07B4566"
+            },
+            "INFRA_SECRET_NAME": "stg/xtrim-sitio-publico-infra-outputs/environment"
+          }
+        },
+        "Handler": "index.handler",
+        "Role": {
+          "Fn::GetAtt": [
+            "synckeylambdastgSyncKeyPairHandlerV3ServiceRole4F8CBCEF",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs24.x",
+        "Tags": [
+          {
+            "Key": "Name",
+            "Value": "sync-key-lambda-stg"
+          },
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ],
+        "Timeout": 30
+      },
+      "DependsOn": [
+        "InfraOutputsSecret",
+        "synckeylambdastgSyncKeyPairHandlerV3ServiceRoleDefaultPolicy9992ED6C",
+        "synckeylambdastgSyncKeyPairHandlerV3ServiceRole4F8CBCEF"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/sync-key-lambda-stg/SyncKeyPairHandlerV3/Resource",
+        "aws:asset:path": "asset.fab2595ad2940ca2f28f0abe085f24cfb8550013a8e925b8cbf91d011f719057",
+        "aws:asset:is-bundled": true,
+        "aws:asset:property": "Code"
+      }
+    },
+    "SyncKeyProviderframeworkonEventServiceRole1ECBF5ED": {
+      "Type": "AWS::IAM::Role",
+      "Properties": {
+        "AssumeRolePolicyDocument": {
+          "Statement": [
+            {
+              "Action": "sts:AssumeRole",
+              "Effect": "Allow",
+              "Principal": {
+                "Service": "lambda.amazonaws.com"
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "ManagedPolicyArns": [
+          {
+            "Fn::Join": [
+              "",
+              [
+                "arn:",
+                {
+                  "Ref": "AWS::Partition"
+                },
+                ":iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+              ]
+            ]
+          }
+        ],
+        "Tags": [
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/SyncKeyProvider/framework-onEvent/ServiceRole/Resource"
+      }
+    },
+    "SyncKeyProviderframeworkonEventServiceRoleDefaultPolicy88BED40D": {
+      "Type": "AWS::IAM::Policy",
+      "Properties": {
+        "PolicyDocument": {
+          "Statement": [
+            {
+              "Action": "lambda:InvokeFunction",
+              "Effect": "Allow",
+              "Resource": [
+                {
+                  "Fn::GetAtt": [
+                    "synckeylambdastgSyncKeyPairHandlerV3F8E1E748",
+                    "Arn"
+                  ]
+                },
+                {
+                  "Fn::Join": [
+                    "",
+                    [
+                      {
+                        "Fn::GetAtt": [
+                          "synckeylambdastgSyncKeyPairHandlerV3F8E1E748",
+                          "Arn"
+                        ]
+                      },
+                      ":*"
+                    ]
+                  ]
+                }
+              ]
+            },
+            {
+              "Action": "lambda:GetFunction",
+              "Effect": "Allow",
+              "Resource": {
+                "Fn::GetAtt": [
+                  "synckeylambdastgSyncKeyPairHandlerV3F8E1E748",
+                  "Arn"
+                ]
+              }
+            }
+          ],
+          "Version": "2012-10-17"
+        },
+        "PolicyName": "SyncKeyProviderframeworkonEventServiceRoleDefaultPolicy88BED40D",
+        "Roles": [
+          {
+            "Ref": "SyncKeyProviderframeworkonEventServiceRole1ECBF5ED"
+          }
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/SyncKeyProvider/framework-onEvent/ServiceRole/DefaultPolicy/Resource"
+      }
+    },
+    "SyncKeyProviderframeworkonEvent9F3D6957": {
+      "Type": "AWS::Lambda::Function",
+      "Properties": {
+        "Code": {
+          "S3Bucket": {
+            "Fn::Sub": "cdk-hnb659fds-assets-${AWS::AccountId}-us-east-1"
+          },
+          "S3Key": "07a90cc3efdfc34da22208dcd9d211f06f5b0e01b21e778edc7c3966b1f61d57.zip"
+        },
+        "Description": "AWS CDK resource provider framework - onEvent (xtrim-web-stg/SyncKeyProvider)",
+        "Environment": {
+          "Variables": {
+            "USER_ON_EVENT_FUNCTION_ARN": {
+              "Fn::GetAtt": [
+                "synckeylambdastgSyncKeyPairHandlerV3F8E1E748",
+                "Arn"
+              ]
+            }
+          }
+        },
+        "Handler": "framework.onEvent",
+        "LoggingConfig": {
+          "ApplicationLogLevel": "FATAL",
+          "LogFormat": "JSON"
+        },
+        "Role": {
+          "Fn::GetAtt": [
+            "SyncKeyProviderframeworkonEventServiceRole1ECBF5ED",
+            "Arn"
+          ]
+        },
+        "Runtime": "nodejs22.x",
+        "Tags": [
+          {
+            "Key": "Stage",
+            "Value": "stg"
+          }
+        ],
+        "Timeout": 900
+      },
+      "DependsOn": [
+        "SyncKeyProviderframeworkonEventServiceRoleDefaultPolicy88BED40D",
+        "SyncKeyProviderframeworkonEventServiceRole1ECBF5ED"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/SyncKeyProvider/framework-onEvent/Resource",
+        "aws:asset:path": "asset.07a90cc3efdfc34da22208dcd9d211f06f5b0e01b21e778edc7c3966b1f61d57",
+        "aws:asset:is-bundled": false,
+        "aws:asset:property": "Code"
+      }
+    },
+    "SyncKeyPairResourceV6": {
+      "Type": "AWS::CloudFormation::CustomResource",
+      "Properties": {
+        "ServiceToken": {
+          "Fn::GetAtt": [
+            "SyncKeyProviderframeworkonEvent9F3D6957",
+            "Arn"
+          ]
+        },
+        "KeyPairId": {
+          "Fn::GetAtt": [
+            "xtrimec2instancev2stgKeyPairV6D07B4566",
+            "KeyPairId"
+          ]
+        },
+        "ForceUpdate": "2026-03-09T06:35:10.001Z"
+      },
+      "UpdateReplacePolicy": "Delete",
+      "DeletionPolicy": "Delete",
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/SyncKeyPairResourceV6/Default"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAA/31S247aMBD9ln037hb2BwK0FWrVRmTf0cSZpAOOvfKMl6Io/14lJoEibZ/mzPFcz3iply+f9fMTnHlhqtPCUqm7QsCc1B7Zx2BQwZkPHZql7ja1K2LpUNSmdnsfBdVMje4rlBYzZm8IhLxTBZoYSC7fgo9vY/B/iZ1rAjIPfB6wpj8/iEV9x0sOFAZ2gjvHAs6M/e/xl11+175XvNLdOppTGvmKksm9JXO50Vc/OWtg7JWFtqxAdwW5xqJ49zU6M+41g009k70iaHV3q3tFe28xCWb/mTcPviaLvTLWx6oO3onutsQSqIxJvdWvQA25zBhk3ngnwduhxAf0ffKw+wGYUVhng1GhYt1tQaAExlm0dL35HNv1PTFFF2hCknC7njJ7xSPLLThoMKTvkQKTeYXQoGQiYH636ETNAY8vk9QH5ys8sv45mpuww8pR3qKoTWTx7fw3B1knbManQ7j6rLvszA/xefDvVGHoHwpN/HB3NcpVCDTkmvGOEKBFGbKG+fSRP70vX/RKPz8dmWgRohNqUe+T/Qu7nLxMVAMAAA=="
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-stg/CDKMetadata/Default"
+      }
+    }
+  },
+  "Outputs": {
+    "VpcId": {
+      "Value": "vpc-09c77d7ec6a1bcdf1",
+      "Export": {
+        "Name": "Xtrim-vpc-stgVPC-VpcId"
+      }
+    },
+    "xtrimcloudfrontsgstgSecurityGroupIdE1FF25D3": {
+      "Value": {
+        "Fn::GetAtt": [
+          "xtrimcloudfrontsgstgBD3AE4E0",
+          "GroupId"
+        ]
+      },
+      "Export": {
+        "Name": "SecurityGroupxtrim-cloudfront-sg-stg"
+      }
+    },
+    "xtrimstrapiec2sgstgSecurityGroupId870A1D35": {
+      "Value": {
+        "Fn::GetAtt": [
+          "xtrimstrapiec2sgstg1041D958",
+          "GroupId"
+        ]
+      },
+      "Export": {
+        "Name": "SecurityGroupxtrim-strapi-ec2-sg-stg"
+      }
+    },
+    "xtrimrdssgstgSecurityGroupId747D3736": {
+      "Value": {
+        "Fn::GetAtt": [
+          "xtrimrdssgstg70F5BAFE",
+          "GroupId"
+        ]
+      },
+      "Export": {
+        "Name": "SecurityGroupxtrim-rds-sg-stg"
+      }
+    },
+    "BucketArn": {
+      "Value": {
+        "Fn::GetAtt": [
+          "xtrimassetsstgBucketF8C4460E",
+          "Arn"
+        ]
+      },
+      "Export": {
+        "Name": "xtrim-assets-stgS3-BucketArn"
+      }
+    },
+    "DistributionId": {
+      "Value": {
+        "Ref": "xtrimassetscfstgDist94854DBB"
+      },
+      "Export": {
+        "Name": "xtrim-assets-cf-stgCloudfront-DistributionId"
+      }
+    },
+    "DomainName": {
+      "Value": {
+        "Fn::GetAtt": [
+          "xtrimassetscfstgDist94854DBB",
+          "DomainName"
+        ]
+      },
+      "Export": {
+        "Name": "xtrim-assets-cf-stgCloudfront-DomainName"
+      }
+    },
+    "InstanceId": {
+      "Value": {
+        "Ref": "xtrimec2instancev2stg7C41DC30"
+      },
+      "Export": {
+        "Name": "xtrim-ec2-instance-v2-stgEC2-InstanceId"
+      }
+    },
+    "InstancePublicDnsName": {
+      "Value": {
+        "Fn::GetAtt": [
+          "xtrimec2instancev2stg7C41DC30",
+          "PublicDnsName"
+        ]
+      },
+      "Export": {
+        "Name": "xtrim-ec2-instance-v2-stgEC2-InstancePublicDnsName"
+      }
+    },
+    "InstancePublicIp": {
+      "Value": {
+        "Fn::GetAtt": [
+          "xtrimec2instancev2stg7C41DC30",
+          "PublicIp"
+        ]
+      },
+      "Export": {
+        "Name": "xtrim-ec2-instance-v2-stgEC2-InstancePublicIp"
+      }
+    },
+    "InstancePrivateIp": {
+      "Value": {
+        "Fn::GetAtt": [
+          "xtrimec2instancev2stg7C41DC30",
+          "PrivateIp"
+        ]
+      },
+      "Export": {
+        "Name": "xtrim-ec2-instance-v2-stgEC2-InstancePrivateIp"
+      }
+    },
+    "KeySsmPath": {
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "/ec2/keypair/",
+            {
+              "Fn::GetAtt": [
+                "xtrimec2instancev2stgKeyPairV6D07B4566",
+                "KeyPairId"
+              ]
+            }
+          ]
+        ]
+      },
+      "Export": {
+        "Name": "xtrim-ec2-instance-v2-stgKeySsmPath"
+      }
+    },
+    "KeyName": {
+      "Value": {
+        "Ref": "xtrimec2instancev2stgKeyPairV6D07B4566"
+      },
+      "Export": {
+        "Name": "xtrim-ec2-instance-v2-stgKeyName"
+      }
+    },
+    "InstanceUser": {
+      "Value": "ec2-user",
+      "Export": {
+        "Name": "xtrim-ec2-instance-v2-stgInstanceUser"
+      }
+    },
+    "SsmRegion": {
+      "Value": "us-east-1",
+      "Export": {
+        "Name": "xtrim-ec2-instance-v2-stgSsmRegion"
+      }
+    },
+    "DbHost": {
+      "Value": {
+        "Fn::GetAtt": [
+          "xtrimrdssitiopublicostgstgxtrimwebdbC4F0382D",
+          "Endpoint.Address"
+        ]
+      },
+      "Export": {
+        "Name": "xtrim-rds-sitio-publico-stg-DbHost"
+      }
+    },
+    "DbSecretId": {
+      "Value": {
+        "Fn::Join": [
+          "-",
+          [
+            {
+              "Fn::Select": [
+                0,
+                {
+                  "Fn::Split": [
+                    "-",
+                    {
+                      "Fn::Select": [
+                        6,
+                        {
+                          "Fn::Split": [
+                            ":",
+                            {
+                              "Ref": "xtrimwebstgxtrimrdssitiopublicostgstgxtrimwebdbSecret8B645B923fdaad7efa858a3daf9490cf0a702aeb"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Fn::Select": [
+                1,
+                {
+                  "Fn::Split": [
+                    "-",
+                    {
+                      "Fn::Select": [
+                        6,
+                        {
+                          "Fn::Split": [
+                            ":",
+                            {
+                              "Ref": "xtrimwebstgxtrimrdssitiopublicostgstgxtrimwebdbSecret8B645B923fdaad7efa858a3daf9490cf0a702aeb"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "Fn::Select": [
+                2,
+                {
+                  "Fn::Split": [
+                    "-",
+                    {
+                      "Fn::Select": [
+                        6,
+                        {
+                          "Fn::Split": [
+                            ":",
+                            {
+                              "Ref": "xtrimwebstgxtrimrdssitiopublicostgstgxtrimwebdbSecret8B645B923fdaad7efa858a3daf9490cf0a702aeb"
+                            }
+                          ]
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        ]
+      },
+      "Export": {
+        "Name": "xtrim-rds-sitio-publico-stg-DbSecretPath"
+      }
+    },
+    "DbSecretArn": {
+      "Value": {
+        "Ref": "xtrimrdssitiopublicostgstgxtrimwebdbSecretAttachment1648D264"
+      },
+      "Export": {
+        "Name": "xtrim-rds-sitio-publico-stg-DbSecretArn"
+      }
+    },
+    "InfraOutputsSecretLambdaStgFunctionArn": {
+      "Value": {
+        "Fn::GetAtt": [
+          "infraoutputssecretlambdastgInfraOutputsSecretHandlerC1D57BF8",
+          "Arn"
+        ]
+      },
+      "Export": {
+        "Name": "infra-outputs-secret-lambda-stgInfraOutputsSecretLambdaStgFunctionArn"
+      }
+    },
+    "RdsLambdaStgFunctionArn": {
+      "Value": {
+        "Fn::GetAtt": [
+          "rdslambdastgCreateExtraDbHandler9A62D13A",
+          "Arn"
+        ]
+      },
+      "Export": {
+        "Name": "rds-lambda-stgRdsLambdaStgFunctionArn"
+      }
+    },
+    "SyncKeyLambdaStgFunctionArn": {
+      "Value": {
+        "Fn::GetAtt": [
+          "synckeylambdastgSyncKeyPairHandlerV3F8E1E748",
+          "Arn"
+        ]
+      },
+      "Export": {
+        "Name": "sync-key-lambda-stgSyncKeyLambdaStgFunctionArn"
+      }
+    }
+  },
+  "Parameters": {
+    "SsmParameterValueawsserviceamiamazonlinuxlatestal2023amikernel61x8664C96584B6F00A464EAD1953AFF4B05118Parameter": {
+      "Type": "AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>",
+      "Default": "/aws/service/ami-amazon-linux-latest/al2023-ami-kernel-6.1-x86_64"
+    },
+    "BootstrapVersion": {
+      "Type": "AWS::SSM::Parameter::Value<String>",
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+    }
+  },
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                  ],
+                  {
+                    "Ref": "BootstrapVersion"
+                  }
+                ]
+              }
+            ]
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+        }
+      ]
+    }
+  }
+}

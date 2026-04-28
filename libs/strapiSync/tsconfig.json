@@ -1,0 +1,10 @@
+{
+  "extends": "@strapi/typescript-utils/tsconfigs/server",
+  "compilerOptions": {
+    "skipLibCheck": true
+  },
+  "include": ["admin/src", "server/src"],
+  "exclude": ["node_modules", "dist"]
+}
+
+

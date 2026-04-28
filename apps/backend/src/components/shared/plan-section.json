@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_plan_sections",
+  "info": {
+    "displayName": "PlanSection"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "price": {
+      "type": "string"
+    },
+    "prevPrice": {
+      "type": "string"
+    },
+    "buttons": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": true
+    },
+    "activeStatus": {
+      "type": "component",
+      "component": "global.status-check",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

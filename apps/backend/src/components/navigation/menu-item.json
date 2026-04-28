@@ -1,0 +1,77 @@
+{
+  "collectionName": "components_navigation_dropdown_links",
+  "info": {
+    "displayName": "MenuItem"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "simple",
+        "list",
+        "cards"
+      ]
+    },
+    "promoCards": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type"
+            },
+            "cards"
+          ]
+        }
+      },
+      "component": "navigation.promo-card",
+      "repeatable": true
+    },
+    "href": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type"
+            },
+            "simple"
+          ]
+        }
+      }
+    },
+    "menuItems": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type"
+            },
+            "list"
+          ]
+        }
+      },
+      "component": "global.items",
+      "repeatable": true
+    },
+    "titleCards": {
+      "type": "string",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type"
+            },
+            "cards"
+          ]
+        }
+      }
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_global_features_clicks",
+  "info": {
+    "displayName": "FeatureClick"
+  },
+  "options": {},
+  "attributes": {
+    "description": {
+      "type": "string"
+    },
+    "button": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

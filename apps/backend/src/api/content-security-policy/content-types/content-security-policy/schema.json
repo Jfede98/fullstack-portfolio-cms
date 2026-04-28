@@ -1,0 +1,19 @@
+{
+  "kind": "singleType",
+  "collectionName": "content_security_policies",
+  "info": {
+    "singularName": "content-security-policy",
+    "pluralName": "content-security-policies",
+    "displayName": "ContentSecurityPolicy"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "csp": {
+      "type": "json",
+      "required": true
+    }
+  }
+}

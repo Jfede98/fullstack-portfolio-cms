@@ -1,0 +1,918 @@
+{
+  "Resources": {
+    "stgspwebxtrimIPV4Allow": {
+      "Type": "AWS::WAFv2::IPSet",
+      "Properties": {
+        "Addresses": [],
+        "Description": "IPV4_Allow",
+        "IPAddressVersion": "IPV4",
+        "Name": "stg-sp-web-xtrim_IPV4_Allow",
+        "Scope": "CLOUDFRONT"
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-waf-stg/stg-sp-web-xtrim_IPV4_Allow"
+      }
+    },
+    "stgspwebxtrimIPV6Allow": {
+      "Type": "AWS::WAFv2::IPSet",
+      "Properties": {
+        "Addresses": [],
+        "Description": "IPV6_Allow",
+        "IPAddressVersion": "IPV6",
+        "Name": "stg-sp-web-xtrim_IPV6_Allow",
+        "Scope": "CLOUDFRONT"
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-waf-stg/stg-sp-web-xtrim_IPV6_Allow"
+      }
+    },
+    "stgspwebxtrimIPV4Block": {
+      "Type": "AWS::WAFv2::IPSet",
+      "Properties": {
+        "Addresses": [],
+        "Description": "IPV4_Block",
+        "IPAddressVersion": "IPV4",
+        "Name": "stg-sp-web-xtrim_IPV4_Block",
+        "Scope": "CLOUDFRONT"
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-waf-stg/stg-sp-web-xtrim_IPV4_Block"
+      }
+    },
+    "stgspwebxtrimIPV6Block": {
+      "Type": "AWS::WAFv2::IPSet",
+      "Properties": {
+        "Addresses": [],
+        "Description": "IPV6_Block",
+        "IPAddressVersion": "IPV6",
+        "Name": "stg-sp-web-xtrim_IPV6_Block",
+        "Scope": "CLOUDFRONT"
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-waf-stg/stg-sp-web-xtrim_IPV6_Block"
+      }
+    },
+    "xtrimwebwafstg77C8A9FC": {
+      "Type": "AWS::WAFv2::WebACL",
+      "Properties": {
+        "DefaultAction": {
+          "Allow": {}
+        },
+        "Description": "WAF para sitio publico de xtrim",
+        "Name": "xtrim-web-waf-stg",
+        "Rules": [
+          {
+            "Name": "AWS-AWSManagedRulesAntiDDoSRuleSet",
+            "OverrideAction": {
+              "None": {}
+            },
+            "Priority": 0,
+            "Statement": {
+              "ManagedRuleGroupStatement": {
+                "ManagedRuleGroupConfigs": [
+                  {
+                    "AWSManagedRulesAntiDDoSRuleSet": {
+                      "ClientSideActionConfig": {
+                        "Challenge": {
+                          "ExemptUriRegularExpressions": [
+                            {
+                              "RegexString": "/api/|.(acc|avi|css|gif|ico|jpe?g|js|json|mp[34]|ogg|otf|pdf|png|tiff?|ttf|webm|webp|woff2?|xml)$"
+                            }
+                          ],
+                          "Sensitivity": "HIGH",
+                          "UsageOfAction": "ENABLED"
+                        }
+                      }
+                    }
+                  }
+                ],
+                "Name": "AWSManagedRulesAntiDDoSRuleSet",
+                "VendorName": "AWS"
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "AntiDDoSSet",
+              "SampledRequestsEnabled": true
+            }
+          },
+          {
+            "Action": {
+              "Allow": {}
+            },
+            "Name": "sp-wp-xtrim_IPV4_Allow",
+            "Priority": 1,
+            "Statement": {
+              "IPSetReferenceStatement": {
+                "Arn": {
+                  "Fn::GetAtt": [
+                    "stgspwebxtrimIPV4Allow",
+                    "Arn"
+                  ]
+                }
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "IPV4_Allow",
+              "SampledRequestsEnabled": true
+            }
+          },
+          {
+            "Action": {
+              "Allow": {}
+            },
+            "Name": "sp-wp-xtrim_IPV6_Allow",
+            "Priority": 2,
+            "Statement": {
+              "IPSetReferenceStatement": {
+                "Arn": {
+                  "Fn::GetAtt": [
+                    "stgspwebxtrimIPV6Allow",
+                    "Arn"
+                  ]
+                }
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "IPV6_Allow",
+              "SampledRequestsEnabled": true
+            }
+          },
+          {
+            "Action": {
+              "Block": {}
+            },
+            "Name": "sp-wp-xtrim_IPV4_Block",
+            "Priority": 3,
+            "Statement": {
+              "IPSetReferenceStatement": {
+                "Arn": {
+                  "Fn::GetAtt": [
+                    "stgspwebxtrimIPV4Block",
+                    "Arn"
+                  ]
+                }
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "IPV4_Block",
+              "SampledRequestsEnabled": true
+            }
+          },
+          {
+            "Action": {
+              "Block": {}
+            },
+            "Name": "sp-wp-xtrim_IPV6_Block",
+            "Priority": 4,
+            "Statement": {
+              "IPSetReferenceStatement": {
+                "Arn": {
+                  "Fn::GetAtt": [
+                    "stgspwebxtrimIPV6Block",
+                    "Arn"
+                  ]
+                }
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "IPV6_Block",
+              "SampledRequestsEnabled": true
+            }
+          },
+          {
+            "Action": {
+              "Block": {}
+            },
+            "Name": "GeoRule",
+            "Priority": 5,
+            "Statement": {
+              "GeoMatchStatement": {
+                "CountryCodes": [
+                  "CU",
+                  "RU",
+                  "IR",
+                  "KP",
+                  "SY",
+                  "VE"
+                ]
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "GeoRule",
+              "SampledRequestsEnabled": true
+            }
+          },
+          {
+            "Action": {
+              "Count": {}
+            },
+            "Name": "GlobalRateBasedRule",
+            "Priority": 6,
+            "Statement": {
+              "RateBasedStatement": {
+                "AggregateKeyType": "IP",
+                "Limit": 1000
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "GlobalRate",
+              "SampledRequestsEnabled": true
+            }
+          },
+          {
+            "Action": {
+              "Count": {}
+            },
+            "Name": "RateBasedRuleGet",
+            "Priority": 7,
+            "Statement": {
+              "RateBasedStatement": {
+                "AggregateKeyType": "IP",
+                "Limit": 500,
+                "ScopeDownStatement": {
+                  "ByteMatchStatement": {
+                    "FieldToMatch": {
+                      "Method": {}
+                    },
+                    "PositionalConstraint": "EXACTLY",
+                    "SearchString": "GET",
+                    "TextTransformations": [
+                      {
+                        "Priority": 0,
+                        "Type": "NONE"
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "RateGet",
+              "SampledRequestsEnabled": true
+            }
+          },
+          {
+            "Action": {
+              "Count": {}
+            },
+            "Name": "RateBasedRulePOST",
+            "Priority": 8,
+            "Statement": {
+              "RateBasedStatement": {
+                "AggregateKeyType": "IP",
+                "Limit": 100,
+                "ScopeDownStatement": {
+                  "OrStatement": {
+                    "Statements": [
+                      {
+                        "ByteMatchStatement": {
+                          "FieldToMatch": {
+                            "Method": {}
+                          },
+                          "PositionalConstraint": "EXACTLY",
+                          "SearchString": "POST",
+                          "TextTransformations": [
+                            {
+                              "Priority": 0,
+                              "Type": "NONE"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "ByteMatchStatement": {
+                          "FieldToMatch": {
+                            "Method": {}
+                          },
+                          "PositionalConstraint": "EXACTLY",
+                          "SearchString": "PUT",
+                          "TextTransformations": [
+                            {
+                              "Priority": 0,
+                              "Type": "NONE"
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "ByteMatchStatement": {
+                          "FieldToMatch": {
+                            "Method": {}
+                          },
+                          "PositionalConstraint": "EXACTLY",
+                          "SearchString": "DELETE",
+                          "TextTransformations": [
+                            {
+                              "Priority": 0,
+                              "Type": "NONE"
+                            }
+                          ]
+                        }
+                      }
+                    ]
+                  }
+                }
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "RateWriteOpsCount",
+              "SampledRequestsEnabled": true
+            }
+          },
+          {
+            "Action": {
+              "Count": {}
+            },
+            "Name": "BodySizeRestrictionRule",
+            "Priority": 9,
+            "Statement": {
+              "SizeConstraintStatement": {
+                "ComparisonOperator": "GT",
+                "FieldToMatch": {
+                  "Body": {
+                    "OversizeHandling": "MATCH"
+                  }
+                },
+                "Size": 16384,
+                "TextTransformations": [
+                  {
+                    "Priority": 0,
+                    "Type": "NONE"
+                  }
+                ]
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "BodySize",
+              "SampledRequestsEnabled": true
+            }
+          },
+          {
+            "Name": "AWS-AWSManagedRulesAmazonIpReputationList",
+            "OverrideAction": {
+              "None": {}
+            },
+            "Priority": 10,
+            "Statement": {
+              "ManagedRuleGroupStatement": {
+                "Name": "AWSManagedRulesAmazonIpReputationList",
+                "RuleActionOverrides": [
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "AWSManagedIPReputationList"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Count": {}
+                    },
+                    "Name": "AWSManagedReconnaissanceList"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "AWSManagedIPDDoSList"
+                  }
+                ],
+                "VendorName": "AWS"
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "ReputationList",
+              "SampledRequestsEnabled": true
+            }
+          },
+          {
+            "Action": {
+              "Count": {}
+            },
+            "Name": "ManagedIPDDoSRateLimit",
+            "Priority": 11,
+            "Statement": {
+              "RateBasedStatement": {
+                "AggregateKeyType": "IP",
+                "Limit": 1000,
+                "ScopeDownStatement": {
+                  "LabelMatchStatement": {
+                    "Key": "awswaf:managed:aws:amazon-ip-list:AWSManagedIPDDoSList",
+                    "Scope": "LABEL"
+                  }
+                }
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "DdosRate",
+              "SampledRequestsEnabled": true
+            }
+          },
+          {
+            "Name": "Aws-aws-managtedrulesanonymousIpList",
+            "OverrideAction": {
+              "None": {}
+            },
+            "Priority": 12,
+            "Statement": {
+              "ManagedRuleGroupStatement": {
+                "Name": "AWSManagedRulesAnonymousIpList",
+                "RuleActionOverrides": [
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "AnonymousIPList"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "HostingProviderIPList"
+                  }
+                ],
+                "VendorName": "AWS"
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "AnonymousList",
+              "SampledRequestsEnabled": true
+            }
+          },
+          {
+            "Name": "AWS-AWSManagedRulesCommonRuleSet",
+            "OverrideAction": {
+              "None": {}
+            },
+            "Priority": 13,
+            "Statement": {
+              "ManagedRuleGroupStatement": {
+                "Name": "AWSManagedRulesCommonRuleSet",
+                "RuleActionOverrides": [
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "NoUserAgent_HEADER"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "UserAgent_BadBots_HEADER"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "SizeRestrictions_QUERYSTRING"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "SizeRestrictions_Cookie_HEADER"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "SizeRestrictions_BODY"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "SizeRestrictions_URIPATH"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "EC2MetaDataSSRF_BODY"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "EC2MetaDataSSRF_COOKIE"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "EC2MetaDataSSRF_URIPATH"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "EC2MetaDataSSRF_QUERYARGUMENTS"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "GenericLFI_QUERYARGUMENTS"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "GenericLFI_URIPATH"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "GenericLFI_BODY"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "RestrictedExtensions_URIPATH"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "RestrictedExtensions_QUERYARGUMENTS"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "GenericRFI_QUERYARGUMENTS"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "GenericRFI_BODY"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "GenericRFI_URIPATH"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CrossSiteScripting_COOKIE"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CrossSiteScripting_QUERYARGUMENTS"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CrossSiteScripting_BODY"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CrossSiteScripting_URIPATH"
+                  }
+                ],
+                "VendorName": "AWS"
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "CommonSet",
+              "SampledRequestsEnabled": true
+            }
+          },
+          {
+            "Name": "AWS-AWSManagedRulesSQLiRuleSet",
+            "OverrideAction": {
+              "None": {}
+            },
+            "Priority": 14,
+            "Statement": {
+              "ManagedRuleGroupStatement": {
+                "Name": "AWSManagedRulesSQLiRuleSet",
+                "VendorName": "AWS"
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "SQLISet",
+              "SampledRequestsEnabled": true
+            }
+          },
+          {
+            "Name": "AWS-AWSManagedRulesAdminProtectionRuleSet",
+            "OverrideAction": {
+              "None": {}
+            },
+            "Priority": 15,
+            "Statement": {
+              "ManagedRuleGroupStatement": {
+                "Name": "AWSManagedRulesAdminProtectionRuleSet",
+                "RuleActionOverrides": [
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "AdminProtection_URIPATH"
+                  }
+                ],
+                "VendorName": "AWS"
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "AdminSet",
+              "SampledRequestsEnabled": true
+            }
+          },
+          {
+            "Name": "AWS-AWSManagedRulesBotControlRuleSet",
+            "OverrideAction": {
+              "None": {}
+            },
+            "Priority": 16,
+            "Statement": {
+              "ManagedRuleGroupStatement": {
+                "Name": "AWSManagedRulesBotControlRuleSet",
+                "RuleActionOverrides": [
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CategoryAdvertising"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CategoryArchiver"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CategoryContentFetcher"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CategoryEmailClient"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CategoryHttpLibrary"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CategoryLinkChecker"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CategoryMiscellaneous"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CategoryMonitoring"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CategoryScrapingFramework"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CategorySearchEngine"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CategorySecurity"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CategorySeo"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Count": {}
+                    },
+                    "Name": "CategorySocialMedia"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "CategoryAI"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "SignalAutomatedBrowser"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Block": {}
+                    },
+                    "Name": "SignalKnownBotDataCenter"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Count": {}
+                    },
+                    "Name": "SignalNonBrowserUserAgent"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Challenge": {}
+                    },
+                    "Name": "TGT_VolumetricIpTokenAbsent"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Captcha": {}
+                    },
+                    "Name": "TGT_VolumetricSession"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Captcha": {}
+                    },
+                    "Name": "TGT_SignalAutomatedBrowser"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Captcha": {}
+                    },
+                    "Name": "TGT_SignalBrowserInconsistency"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Count": {}
+                    },
+                    "Name": "TGT_TokenReuseIp"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Count": {}
+                    },
+                    "Name": "TGT_ML_CoordinatedActivityMedium"
+                  },
+                  {
+                    "ActionToUse": {
+                      "Count": {}
+                    },
+                    "Name": "TGT_ML_CoordinatedActivityHigh"
+                  }
+                ],
+                "VendorName": "AWS"
+              }
+            },
+            "VisibilityConfig": {
+              "CloudWatchMetricsEnabled": true,
+              "MetricName": "BotSet",
+              "SampledRequestsEnabled": true
+            }
+          }
+        ],
+        "Scope": "CLOUDFRONT",
+        "Tags": [
+          {
+            "Key": "Environment",
+            "Value": "stg"
+          },
+          {
+            "Key": "Name",
+            "Value": "xtrim-web-waf-stg"
+          },
+          {
+            "Key": "Project",
+            "Value": "Xtrim Web"
+          },
+          {
+            "Key": "Resource",
+            "Value": "WAF"
+          }
+        ],
+        "VisibilityConfig": {
+          "CloudWatchMetricsEnabled": true,
+          "MetricName": "xtrim-web-waf-stg-metric",
+          "SampledRequestsEnabled": true
+        }
+      },
+      "DependsOn": [
+        "stgspwebxtrimIPV4Allow",
+        "stgspwebxtrimIPV4Block",
+        "stgspwebxtrimIPV6Allow",
+        "stgspwebxtrimIPV6Block"
+      ],
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-waf-stg/xtrim-web-waf-stg/xtrim-web-waf-stg"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAA/zPSMzIx1DNQTCwv1k1OydbNyUzSqw4uSUzO1kksL44vT0wrM9Krdk7L8wwITi3RcU7LC09NcnT2qQUx/UtLCkpLanXy8lNS9bKK9cuMTPSM9QwUs4ozM3WLSvNKMnNT9YIgNAALkrnMaQAAAA=="
+      },
+      "Metadata": {
+        "aws:cdk:path": "xtrim-web-waf-stg/CDKMetadata/Default"
+      }
+    }
+  },
+  "Outputs": {
+    "Arn": {
+      "Value": {
+        "Fn::GetAtt": [
+          "xtrimwebwafstg77C8A9FC",
+          "Arn"
+        ]
+      },
+      "Export": {
+        "Name": "xtrim-web-waf-stg-Arn"
+      }
+    },
+    "ExportsOutputFnGetAttxtrimwebwafstg77C8A9FCArn88D49E25": {
+      "Value": {
+        "Fn::GetAtt": [
+          "xtrimwebwafstg77C8A9FC",
+          "Arn"
+        ]
+      },
+      "Export": {
+        "Name": "xtrim-web-waf-stg:ExportsOutputFnGetAttxtrimwebwafstg77C8A9FCArn88D49E25"
+      }
+    }
+  },
+  "Parameters": {
+    "BootstrapVersion": {
+      "Type": "AWS::SSM::Parameter::Value<String>",
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+    }
+  },
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                  ],
+                  {
+                    "Ref": "BootstrapVersion"
+                  }
+                ]
+              }
+            ]
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+        }
+      ]
+    }
+  }
+}

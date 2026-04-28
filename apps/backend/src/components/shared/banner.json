@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_shared_banners",
+  "info": {
+    "displayName": "Banner",
+    "icon": "landscape"
+  },
+  "options": {},
+  "attributes": {
+    "bannerDesktop": {
+      "type": "component",
+      "component": "shared.config-banner",
+      "repeatable": false
+    },
+    "bannerMobile": {
+      "type": "component",
+      "component": "shared.config-banner",
+      "repeatable": false
+    },
+    "ctaPosition": {
+      "type": "enumeration",
+      "default": "below",
+      "enum": [
+        "side",
+        "below"
+      ]
+    }
+  },
+  "config": {}
+}

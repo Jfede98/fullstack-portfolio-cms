@@ -1,0 +1,33 @@
+{
+  "collectionName": "components_block_testimonials_sections",
+  "info": {
+    "displayName": "Testimonials"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "ctaButton": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    },
+    "testimonials": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::testimonial.testimonial"
+    },
+    "features": {
+      "type": "component",
+      "component": "global.feature",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

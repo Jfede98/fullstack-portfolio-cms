@@ -1,0 +1,50 @@
+{
+  "collectionName": "components_shared_apps",
+  "info": {
+    "displayName": "App"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "useCustomIcon": {
+      "type": "boolean",
+      "default": false
+    },
+    "icon": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "useCustomIcon"
+            },
+            false
+          ]
+        }
+      },
+      "component": "global.icon",
+      "repeatable": false
+    },
+    "custom_icon": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::custom-icon.custom-icon",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "useCustomIcon"
+            },
+            true
+          ]
+        }
+      }
+    }
+  },
+  "config": {}
+}

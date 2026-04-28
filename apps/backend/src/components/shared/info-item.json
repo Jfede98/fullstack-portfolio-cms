@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_shared_info_items",
+  "info": {
+    "displayName": "InfoItem"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "content": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

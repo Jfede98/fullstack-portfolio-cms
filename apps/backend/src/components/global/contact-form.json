@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_global_contact_forms",
+  "info": {
+    "displayName": "ContactForm"
+  },
+  "options": {},
+  "attributes": {
+    "fields": {
+      "type": "component",
+      "component": "global.contact-field",
+      "repeatable": true
+    },
+    "checkbox": {
+      "type": "component",
+      "component": "global.checkbox",
+      "repeatable": false
+    },
+    "button": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

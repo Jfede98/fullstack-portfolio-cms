@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_global_status_checks",
+  "info": {
+    "displayName": "StatusCheck"
+  },
+  "options": {},
+  "attributes": {
+    "isActive": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "config": {}
+}

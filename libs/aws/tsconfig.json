@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "useDefineForClassFields": true,
+    "module": "ESNext",
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": true,
+    "moduleDetection": "force",
+    "noEmit": true,
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "erasableSyntaxOnly": false,
+    "noFallthroughCasesInSwitch": true,
+    "noUncheckedSideEffectImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@aws/gateways/*": ["src/lib/gateways/*"],
+      "@aws/constants/*": ["src/lib/constants/*"],
+      "@aws/helper/*": ["src/lib/helper/*"],
+      "@aws/interfaces/*": ["src/lib/interfaces/*"],
+      "@aws/cdk/*": ["src/lib/cdk/*"],
+      "@aws/stack/*": ["src/stack/*"]
+    }
+  },
+  "types": ["vitest/globals", "node"],
+  "include": ["src/**/*.ts"]
+}

@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "widgets",
+  "info": {
+    "singularName": "widget",
+    "pluralName": "widgets",
+    "displayName": "Widget"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "widget": {
+      "type": "dynamiczone",
+      "components": [
+        "block.fa-qs",
+        "block.cta-banner",
+        "block.features",
+        "block.map"
+      ]
+    }
+  }
+}

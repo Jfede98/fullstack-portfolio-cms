@@ -1,0 +1,45 @@
+{
+  "name": "@sitio-publico/aws",
+  "root": "libs/aws",
+  "version": "1.0.0",
+  "projectType": "library",
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/aws",
+        "command": "vite build --watch"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/aws",
+        "command": "tsc -b && vite build"
+      },
+      "inputs": ["production", "^production"]
+    },
+    "deploy:prod": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/aws",
+        "command": "echo 'method not implemented yet!...'"
+      }
+    },
+    "deploy-sdk": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/aws",
+        "command": "bunx cdk deploy --require-approval  never --all --method=direct {args}"
+      }
+    },
+
+    "remove:prod": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/aws",
+        "command": "bunx cdk destroy --force --all {args}"
+      }
+    }
+  }
+}

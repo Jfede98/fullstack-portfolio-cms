@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_block_maps",
+  "info": {
+    "displayName": "Map",
+    "icon": "pinMap"
+  },
+  "options": {},
+  "attributes": {
+    "token": {
+      "type": "string"
+    },
+    "provider": {
+      "type": "enumeration",
+      "enum": [
+        "google",
+        "mapbox"
+      ]
+    }
+  },
+  "config": {}
+}

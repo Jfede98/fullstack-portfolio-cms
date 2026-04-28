@@ -1,0 +1,42 @@
+{
+  "collectionName": "components_global_contact_fields",
+  "info": {
+    "displayName": "contact-field"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "placeholder": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "email",
+        "tel",
+        "textarea"
+      ]
+    },
+    "required": {
+      "type": "boolean",
+      "default": false
+    },
+    "column": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right",
+        "full"
+      ]
+    }
+  },
+  "config": {}
+}

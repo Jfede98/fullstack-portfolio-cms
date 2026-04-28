@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_content_list_cards",
+  "info": {
+    "displayName": "ListCard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "items": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

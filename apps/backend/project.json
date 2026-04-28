@@ -1,0 +1,61 @@
+{
+  "name": "@sitio-publico/backend",
+  "root": "apps/backend",
+  "implicitDependencies": ["@sitio-publico/strapi-revalidate", "@sitio-publico/strapi-sync", "@sitio-publico/strapi-backups"],
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/backend",
+        "command": "strapi develop"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": ["@sitio-publico/strapi-revalidate", "@sitio-publico/strapi-sync"]
+        }
+      ],
+      "options": {
+        "cwd": "apps/backend",
+        "command": "strapi build"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/backend",
+        "command": "jest --forceExit --detectOpenHandles"
+      }
+    },
+    "test:coverage": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/backend",
+        "command": "jest --forceExit --detectOpenHandles --coverage"
+      }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/backend",
+        "command": "chmod +x ./.scripts/deploy.sh && ./.scripts/deploy.sh"
+      },
+      "dependsOn": [
+        {
+          "target": "build",
+          "projects": "dependencies"
+        }
+      ]
+    },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/backend",
+        "command": "strapi start"
+      }
+    }
+  }
+}

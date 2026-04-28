@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_block_list_card_blocks",
+  "info": {
+    "displayName": "ListCardBlock"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "cards": {
+      "type": "component",
+      "component": "content.list-card",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

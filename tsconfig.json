@@ -1,0 +1,16 @@
+{
+  "extends": "./tsconfig.base.json",
+  "compileOnSave": false,
+  "files": [],
+  "references": [
+    {
+      "path": "./apps/frontend/tsconfig.json"
+    },
+    {
+      "path": "./apps/backend/tsconfig.json"
+    },
+    {
+      "path": "./libs/shared-ui"
+    }
+  ]
+}

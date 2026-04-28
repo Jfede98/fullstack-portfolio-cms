@@ -1,0 +1,25 @@
+{
+  "kind": "singleType",
+  "collectionName": "email_settings",
+  "info": {
+    "singularName": "email-setting",
+    "pluralName": "email-settings",
+    "displayName": "EmailSetting"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "inviteTemplateId": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    },
+    "leadDistributionTemplateId": {
+      "type": "integer",
+      "required": true,
+      "unique": true
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_streaming_cards",
+  "info": {
+    "displayName": "StreamingCard"
+  },
+  "options": {},
+  "attributes": {
+    "badgeText": {
+      "type": "string"
+    },
+    "ctas": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": true
+    },
+    "description": {
+      "type": "text"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

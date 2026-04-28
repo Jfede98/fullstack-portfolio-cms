@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_global_items",
+  "info": {
+    "displayName": "item"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "component",
+      "component": "global.icon",
+      "repeatable": false
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "config": {}
+}

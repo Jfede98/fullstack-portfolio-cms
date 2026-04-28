@@ -1,0 +1,48 @@
+{
+  "collectionName": "components_block_two_columns",
+  "info": {
+    "displayName": "TwoColumns"
+  },
+  "options": {},
+  "attributes": {
+    "backgroundVariant": {
+      "type": "enumeration",
+      "required": true,
+      "default": "primary-50",
+      "enum": [
+        "white",
+        "primary-50"
+      ]
+    },
+    "leftContentType": {
+      "type": "component",
+      "component": "global.rule-two-column",
+      "repeatable": false
+    },
+    "rightContentType": {
+      "type": "component",
+      "component": "global.rule-two-column",
+      "repeatable": false
+    },
+    "showDivider": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    },
+    "dividerColor": {
+      "type": "customField",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "showDivider"
+            },
+            true
+          ]
+        }
+      },
+      "customField": "plugin::dynamic-enumeration.dynamic-field"
+    }
+  },
+  "config": {}
+}

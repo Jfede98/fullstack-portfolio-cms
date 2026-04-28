@@ -1,0 +1,73 @@
+{
+  "collectionName": "components_global_attention_center_cards",
+  "info": {
+    "displayName": "Attention Center Card",
+    "icon": "pinMap",
+    "description": "Card component for attention centers and islands with location and services"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "city": {
+      "type": "string",
+      "required": true
+    },
+    "address": {
+      "type": "text",
+      "required": true
+    },
+    "schedule": {
+      "type": "text",
+      "required": true
+    },
+    "latitude": {
+      "type": "string",
+      "required": true
+    },
+    "longitude": {
+      "type": "string",
+      "required": true
+    },
+    "serviceType": {
+      "type": "enumeration",
+      "required": false,
+      "enum": [
+        "centro_experiencia",
+        "isla"
+      ]
+    },
+    "services": {
+      "type": "component",
+      "component": "global.input-option",
+      "repeatable": true,
+      "required": false
+    },
+    "mapButton": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    },
+    "servicesButton": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    },
+    "navigationButton": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

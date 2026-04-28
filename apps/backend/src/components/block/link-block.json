@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_block_link_blocks",
+  "info": {
+    "displayName": "LinkBlock"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "text"
+    },
+    "link": {
+      "type": "component",
+      "component": "shared.link-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

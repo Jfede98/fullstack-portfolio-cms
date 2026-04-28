@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_block_comparative_tables",
+  "info": {
+    "displayName": "ComparativeTable"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false
+    },
+    "subtitle": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false
+    },
+    "comparative": {
+      "type": "component",
+      "component": "global.feature-item",
+      "repeatable": true
+    },
+    "sections": {
+      "type": "component",
+      "component": "shared.plan-section",
+      "repeatable": true
+    },
+    "titleTable": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

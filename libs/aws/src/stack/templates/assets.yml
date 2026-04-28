@@ -1,0 +1,87 @@
+{
+  "Resources": {
+    "TempSyncPolicy": {
+      "Type": "AWS::IAM::ManagedPolicy",
+      "Properties": {
+        "ManagedPolicyName": "TempSyncPolicy-S3AssetsWeb",
+        "PolicyDocument": {
+          "Version": "2012-10-17",
+          "Statement": [
+            {
+              "Effect": "Allow",
+              "Action": [
+                "s3:ListBucket",
+                "s3:GetBucketLocation"
+              ],
+              "Resource": [
+                "arn:aws:s3:::xtrim-assets-prod",
+                "arn:aws:s3:::xtrim-assets-stg"
+              ]
+            },
+            {
+              "Effect": "Allow",
+              "Action": [
+                "s3:PutObject",
+                "s3:PutObjectAcl",
+                "s3:GetObject"
+              ],
+              "Resource": [
+                "arn:aws:s3:::xtrim-assets-prod/*",
+                "arn:aws:s3:::xtrim-assets-stg/*"
+              ]
+            }
+          ]
+        },
+        "Roles": [
+          "xtrim-web-stg-xtrimec2instancev2stgInstanceRole25E3-ywk63j5UG4Bw"
+        ]
+      },
+      "Metadata": {
+        "aws:cdk:path": "S3AssetsWeb/TempSyncPolicy"
+      }
+    },
+    "CDKMetadata": {
+      "Type": "AWS::CDK::Metadata",
+      "Properties": {
+        "Analytics": "v2:deflate64:H4sIAAAAAAAA/yXFQQqDMBAF0LO4T34l6gXsuiD2ADJNxjJGI3SiUsS7d9G3eQ6ublAWdKj1IdpZXjifmXw0dOhwCi24j+lBid4cunUW/zVaod185NyS8nWZtAbGpLfd1ahQFpOK2M+WsiyM/v8P1Lv5rmkAAAA="
+      },
+      "Metadata": {
+        "aws:cdk:path": "S3AssetsWeb/CDKMetadata/Default"
+      }
+    }
+  },
+  "Parameters": {
+    "BootstrapVersion": {
+      "Type": "AWS::SSM::Parameter::Value<String>",
+      "Default": "/cdk-bootstrap/hnb659fds/version",
+      "Description": "Version of the CDK Bootstrap resources in this environment, automatically retrieved from SSM Parameter Store. [cdk:skip]"
+    }
+  },
+  "Rules": {
+    "CheckBootstrapVersion": {
+      "Assertions": [
+        {
+          "Assert": {
+            "Fn::Not": [
+              {
+                "Fn::Contains": [
+                  [
+                    "1",
+                    "2",
+                    "3",
+                    "4",
+                    "5"
+                  ],
+                  {
+                    "Ref": "BootstrapVersion"
+                  }
+                ]
+              }
+            ]
+          },
+          "AssertDescription": "CDK bootstrap stack version 6 required. Please run 'cdk bootstrap' with a recent version of the CDK CLI."
+        }
+      ]
+    }
+  }
+}

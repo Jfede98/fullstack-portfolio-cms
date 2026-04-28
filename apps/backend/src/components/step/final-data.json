@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_step_final_data",
+  "info": {
+    "displayName": "FinalData",
+    "icon": "check"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "component",
+      "component": "block.two-columns",
+      "repeatable": false,
+      "required": true
+    }
+  },
+  "config": {}
+}

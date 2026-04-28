@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_block_shortcuts",
+  "info": {
+    "displayName": "Shortcuts"
+  },
+  "options": {},
+  "attributes": {
+    "items": {
+      "type": "component",
+      "component": "global.items",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "email_lead_recipients",
+  "info": {
+    "singularName": "email-lead-recipient",
+    "pluralName": "email-lead-recipients",
+    "displayName": "EmailLeadRecipient"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "email": {
+      "type": "email",
+      "required": true,
+      "unique": true
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "lead_routing_configs": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::lead-routing-config.lead-routing-config",
+      "inversedBy": "email_lead_recipients"
+    }
+  }
+}

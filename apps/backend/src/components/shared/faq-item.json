@@ -1,0 +1,32 @@
+{
+  "collectionName": "components_shared_faq_items",
+  "info": {
+    "displayName": "FaqItem"
+  },
+  "options": {},
+  "attributes": {
+    "question": {
+      "type": "text"
+    },
+    "answer": {
+      "type": "richtext"
+    },
+    "category": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::faq-category.faq-category"
+    },
+    "anchor": {
+      "type": "string"
+    },
+    "frequently_asked": {
+      "type": "boolean",
+      "default": false
+    },
+    "order": {
+      "type": "integer",
+      "default": 0
+    }
+  },
+  "config": {}
+}

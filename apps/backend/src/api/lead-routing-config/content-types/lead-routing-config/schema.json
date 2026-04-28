@@ -1,0 +1,56 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lead_routing_configs",
+  "info": {
+    "singularName": "lead-routing-config",
+    "pluralName": "lead-routing-configs",
+    "displayName": "LeadRoutingConfig"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "distributionMode": {
+      "type": "enumeration",
+      "required": true,
+      "default": "tom",
+      "enum": [
+        "email",
+        "tom",
+        "both"
+      ]
+    },
+    "lead_form": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::lead-form.lead-form",
+      "inversedBy": "lead_routing_configs"
+    },
+    "email_lead_recipients": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::email-lead-recipient.email-lead-recipient",
+      "conditions": {
+        "visible": {
+          "!=": [
+            {
+              "var": "distributionMode"
+            },
+            "tom"
+          ]
+        }
+      },
+      "mappedBy": "lead_routing_configs"
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "name": "@sitio-publico/shared-ui",
+  "root": "libs/shared-ui",
+  "version": "1.0.0",
+  "projectType": "library",
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/shared-ui",
+        "command": "nx storybook shared-ui",
+        "port": 4200
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/shared-ui",
+        "command": "tsc -b && vite build"
+      },
+      "inputs": ["production", "^production"]
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/shared-ui",
+        "command": "tsc -p ./tsconfig.deploy.json && chmod +x ./.scripts/deploy.sh && ./.scripts/deploy.sh"
+      },
+      "dependsOn": ["build-statics"]
+    },
+    "build-statics": {
+      "executor": "@nx/storybook:build",
+      "options": {
+        "outputDir": "libs/shared-ui/web-statics",
+        "configDir": "libs/shared-ui/.storybook"
+      },
+      "inputs": ["default", "^production"]
+    },
+    "server-storybook": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/shared-ui",
+        "command": "bunx node ./server.js"
+      }
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/shared-ui",
+        "command": "vitest --run"
+      }
+    },
+    "dev:test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/shared-ui",
+        "command": "vitest --coverage"
+      }
+    },
+    "test:coverage": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "libs/shared-ui",
+        "command": "vitest --run --coverage"
+      }
+    }
+  }
+}

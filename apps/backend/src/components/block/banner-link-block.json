@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_block_banner_link_blocks",
+  "info": {
+    "displayName": "Banner-link-block"
+  },
+  "options": {},
+  "attributes": {
+    "banner": {
+      "type": "component",
+      "component": "shared.banner",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

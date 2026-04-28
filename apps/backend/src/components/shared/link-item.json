@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_shared_link_items",
+  "info": {
+    "displayName": "LinkItem"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "isExternal": {
+      "type": "boolean"
+    },
+    "isButton": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,25 @@
+{
+  "kind": "collectionType",
+  "collectionName": "testimonials",
+  "info": {
+    "singularName": "testimonial",
+    "pluralName": "testimonials",
+    "displayName": "Testimonial"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "author": {
+      "type": "string"
+    },
+    "review": {
+      "type": "text"
+    },
+    "rating": {
+      "type": "string",
+      "regex": "^([0-4]([.,]5)?|5)$"
+    }
+  }
+}

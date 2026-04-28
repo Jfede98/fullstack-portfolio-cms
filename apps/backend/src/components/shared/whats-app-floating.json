@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_whats_app_floatings",
+  "info": {
+    "displayName": "whatsAppFloating"
+  },
+  "options": {},
+  "attributes": {
+    "phoneNumber": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

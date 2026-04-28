@@ -1,0 +1,29 @@
+{
+  "name": "shared-ui",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "peerDependencies": {
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@storybook/preview-api": "^8.6.14",
+    "@storybook/test": "^8.6.15",
+    "@tailwindcss/vite": "^4.1.17",
+    "@testing-library/jest-dom": "^6.9.1",
+    "@testing-library/react": "^16.3.1",
+    "@types/aws-lambda": "8.10.159",
+    "@vitejs/plugin-react-swc": "4.2.2",
+    "@vitest/browser": "^4.0.17",
+    "@vitest/coverage-v8": "^4.0.17",
+    "express": "^5.2.1",
+    "glob": "^11.0.0",
+    "globals": "16.5.0",
+    "lru-cache": "^11.2.5",
+    "vite": "7.2.4",
+    "vite-plugin-dts": "4.5.4",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^4.0.17"
+  }
+}

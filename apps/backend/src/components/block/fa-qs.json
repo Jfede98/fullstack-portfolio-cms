@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_block_fa_qs",
+  "info": {
+    "displayName": "FAQs"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "text"
+    },
+    "questions": {
+      "type": "component",
+      "component": "shared.faq-item",
+      "repeatable": true
+    },
+    "highlightCard": {
+      "type": "component",
+      "component": "shared.info-card",
+      "repeatable": false
+    },
+    "searchPlaceholder": {
+      "type": "string",
+      "default": "¿Qué necesitas saber?"
+    },
+    "showCategories": {
+      "type": "boolean",
+      "default": false
+    },
+    "searchScope": {
+      "type": "enumeration",
+      "default": "faq",
+      "enum": [
+        "faq",
+        "global"
+      ]
+    },
+    "availableCategories": {
+      "type": "relation",
+      "relation": "manyToMany",
+      "target": "api::faq-category.faq-category"
+    },
+    "featuredSliderTitle": {
+      "type": "string",
+      "default": "Lo más preguntado"
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_global_input_options",
+  "info": {
+    "displayName": "InputOption"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "value": {
+      "type": "string",
+      "required": true
+    },
+    "disabled": {
+      "type": "boolean",
+      "default": false
+    }
+  },
+  "config": {}
+}
+

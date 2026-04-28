@@ -1,0 +1,65 @@
+{
+  "name": "@sitio-publico/frontend",
+  "root": "apps/frontend",
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/frontend",
+        "command": "next dev --port 4009"
+      }
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/frontend",
+        "command": "next build"
+      },
+      "inputs": ["production", "^production"]
+    },
+    "test": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/frontend",
+        "command": "jest --config ./jest.config.js"
+      }
+    },
+    "test:coverage": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/frontend",
+        "command": "jest --config ./jest.config.js --coverage"
+      }
+    },
+    "deploy": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/frontend",
+        "command": "chmod +x ./.scripts/deploy.sh && ./.scripts/deploy.sh"
+      },
+      "dependencies": ["libs/shared-ui"],
+      "inputs": [
+        "production",
+        "^production",
+        { "env": "STAGE" },
+        { "env": "REGION" },
+        "!{workspaceRoot}/bun.lockb"
+      ]
+    },
+    "deploy-remove": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/frontend",
+        "command": "chmod +x ./.scripts/remove.sh && ./.scripts/remove.sh"
+      }
+    },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "cwd": "apps/frontend",
+        "command": "next start"
+      },
+      "dependencies": ["libs/shared-ui"]
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_shared_category_tabs",
+  "info": {
+    "displayName": "CategoryTab"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "plans": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::plan.plan"
+    },
+    "icon": {
+      "type": "component",
+      "component": "global.icon",
+      "repeatable": false
+    },
+    "title": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false
+    },
+    "description": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

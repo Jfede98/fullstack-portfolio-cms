@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_block_dual_buttons",
+  "info": {
+    "displayName": "Dual-buttons"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "primaryButton": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    },
+    "secondaryButton": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    },
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "enableOverlay": {
+      "type": "boolean",
+      "default": true
+    }
+  },
+  "config": {}
+}

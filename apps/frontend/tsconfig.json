@@ -1,0 +1,96 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "baseUrl": "./",
+    "paths": {
+      "@components/*": [
+        "src/components/*"
+      ],
+      "@lib/*": [
+        "src/lib/*"
+      ],
+      "@modules/*": [
+        "src/modules/*"
+      ],
+      "@context/*": [
+        "src/context/*"
+      ],
+      "@interfaces/*": [
+        "src/interfaces/*"
+      ],
+      "@hooks/*": [
+        "src/hooks/*"
+      ],
+      "@store/*": [
+        "src/store/*"
+      ],
+      "@views/*": [
+        "src/views/*"
+      ],
+      "@next": [
+        "src/lib/config/next/index.ts"
+      ],
+      "@global-styles": [
+        "src/styles/globals.css"
+      ],
+      // Shared UI
+      "@sitio-publico/shared-ui": [
+        "../../libs/shared-ui/src/lib/main"
+      ],
+      "@shared-ui/components/*": ["../../libs/shared-ui/src/lib/components/*"],
+      "@shared-ui/interfaces/*": ["../../libs/shared-ui/src/lib/interfaces/*"],
+      "@shared-ui/config/*": ["../../libs/shared-ui/src/lib/config/*"],
+      "@shared-ui/constants/*": ["../../libs/shared-ui/src/lib/constants/*"],
+      "@shared-ui/hooks/*": ["../../libs/shared-ui/src/lib/hooks/*"],
+      "@shared-ui/helpers/*": ["../../libs/shared-ui/src/lib/helpers/*"],
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/components/planTab/style.ts",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts",
+    "../../apps/frontend/.next/types/**/*.ts",
+    "../../dist/apps/frontend/.next/types/**/*.ts",
+    "../../libs/shared-ui/src/**/*.ts",
+    "../../libs/shared-ui/src/**/*.tsx"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.stories.ts",
+    "**/*.stories.js",
+    "sst.config.ts",
+    "sst.config.ts"
+  ],
+  "experimental": {
+    "transpilePackages": [
+      "@sitio-publico/shared-ui"
+    ]
+  }
+}

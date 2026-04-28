@@ -1,0 +1,26 @@
+{
+  "collectionName": "components_global_price_displays",
+  "info": {
+    "displayName": "PriceDisplay"
+  },
+  "options": {},
+  "attributes": {
+    "amount": {
+      "type": "string"
+    },
+    "taxLabel": {
+      "type": "string",
+      "default": "+ imp."
+    },
+    "originalPrice": {
+      "type": "string"
+    },
+    "legalDisclaimer": {
+      "type": "string"
+    },
+    "promoLabel": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

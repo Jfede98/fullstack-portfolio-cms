@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_global_features",
+  "info": {
+    "displayName": "Feature"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "icon": {
+      "type": "component",
+      "component": "global.icon",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

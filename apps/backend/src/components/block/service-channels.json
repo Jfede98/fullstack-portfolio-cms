@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_block_service_channels",
+  "info": {
+    "displayName": "ServiceChannels"
+  },
+  "options": {},
+  "attributes": {
+    "attentionCard": {
+      "type": "component",
+      "component": "shared.attention-card",
+      "repeatable": true
+    },
+    "shortcuts": {
+      "type": "component",
+      "component": "block.shortcuts",
+      "repeatable": false
+    },
+    "title": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

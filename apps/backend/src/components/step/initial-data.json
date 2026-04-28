@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_step_initial_data",
+  "info": {
+    "displayName": "InitialData",
+    "icon": "database"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "component",
+      "component": "block.two-columns",
+      "repeatable": false,
+      "required": true
+    },
+    "modalText": {
+      "type": "string",
+      "required": true
+    },
+    "infoText": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,35 @@
+{
+  "collectionName": "components_global_icons",
+  "info": {
+    "displayName": "Icon"
+  },
+  "options": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "type": {
+      "type": "enumeration",
+      "default": "outlined",
+      "enum": [
+        "outlined",
+        "rounded",
+        "filled"
+      ]
+    },
+    "size": {
+      "type": "enumeration",
+      "default": "sm",
+      "enum": [
+        "msm",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        "xxl"
+      ]
+    }
+  },
+  "config": {}
+}

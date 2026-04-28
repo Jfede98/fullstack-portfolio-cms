@@ -1,0 +1,24 @@
+{
+  "collectionName": "components_shared_viewport_rules",
+  "info": {
+    "displayName": "ViewportRule"
+  },
+  "options": {},
+  "attributes": {
+    "breakpoint": {
+      "type": "enumeration",
+      "enum": [
+        "msm",
+        "sm",
+        "md",
+        "lg",
+        "xl",
+        "xxl"
+      ]
+    },
+    "itemsPerRow": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}

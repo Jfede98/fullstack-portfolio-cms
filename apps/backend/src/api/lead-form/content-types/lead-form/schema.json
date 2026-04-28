@@ -1,0 +1,55 @@
+{
+  "kind": "collectionType",
+  "collectionName": "lead_forms",
+  "info": {
+    "singularName": "lead-form",
+    "pluralName": "lead-forms",
+    "displayName": "LeadForm"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "form": {
+      "type": "component",
+      "component": "block.form",
+      "repeatable": false,
+      "required": true
+    },
+    "isActive": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "lead_routing_configs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::lead-routing-config.lead-routing-config",
+      "mappedBy": "lead_form"
+    },
+    "channel": {
+      "type": "string",
+      "required": true
+    },
+    "variant": {
+      "type": "enumeration",
+      "required": true,
+      "default": "default",
+      "enum": [
+        "default",
+        "DSA"
+      ]
+    },
+    "automaticFlow": {
+      "type": "boolean",
+      "required": true,
+      "default": false
+    }
+  }
+}

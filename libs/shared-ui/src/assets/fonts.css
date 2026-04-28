@@ -1,0 +1,54 @@
+/* Regular */
+@font-face {
+  font-family: Ubuntu;
+  font-style: light;
+  font-weight: 300;
+  font-display: swap;
+  src: url("./fonts/Ubuntu/light.woff2") format("woff2");
+}
+
+/* Regular */
+@font-face {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/Ubuntu/regular.woff2") format("woff2");
+}
+
+/* Bold */
+@font-face {
+  font-family: Ubuntu;
+  font-style: bold;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./fonts/Ubuntu/medium.woff2") format("woff2");
+}
+
+/* Icons */
+/* Outlined */
+@font-face {
+  font-family: MaterialIcon;
+  font-style: light;
+  font-weight: 300;
+  font-display: swap;
+  src: url("../fonts/MaterialUI/outlined.woff2") format("woff2");
+}
+
+/* Rounded */
+@font-face {
+  font-family: MaterialIcon;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../fonts/MaterialUI/rounded.woff2") format("woff2");
+}
+
+/* Sharp */
+@font-face {
+  font-family: MaterialIcon;
+  font-style: bold;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../fonts/MaterialUI/filled.woff2") format("woff2");
+}

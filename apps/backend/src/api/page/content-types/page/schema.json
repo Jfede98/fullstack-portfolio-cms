@@ -1,0 +1,63 @@
+{
+  "kind": "collectionType",
+  "collectionName": "pages",
+  "info": {
+    "singularName": "page",
+    "pluralName": "pages",
+    "displayName": "Page"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "slug": {
+      "type": "string",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "section": {
+      "type": "dynamiczone",
+      "components": [
+        "block.testimonials",
+        "block.hero",
+        "block.widget",
+        "block.plan-tab",
+        "block.service-channels",
+        "block.streaming-plans",
+        "block.comparative-table",
+        "block.info-card-block",
+        "block.list-card-block",
+        "block.contact-form-block",
+        "block.link-block",
+        "block.two-columns",
+        "block.dual-buttons",
+        "block.banner-link-block",
+        "block.fa-qs",
+        "block.map",
+        "block.informational-section",
+        "block.centers-page-block"
+      ]
+    },
+    "seo": {
+      "type": "component",
+      "component": "shared.seo",
+      "repeatable": false
+    },
+    "navbarVariant": {
+      "type": "enumeration",
+      "enum": ["default", "no_items", "simple", "none"],
+      "required": true,
+      "default": "default"
+    },
+    "footerVariant": {
+      "type": "enumeration",
+      "enum": ["default", "no_items", "simple", "none"],
+      "required": true,
+      "default": "default"
+    }
+  }
+}

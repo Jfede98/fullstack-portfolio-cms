@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_shared_attention_cards",
+  "info": {
+    "displayName": "AttentionCard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "text": {
+      "type": "string",
+      "required": true
+    },
+    "button": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    },
+    "icon": {
+      "type": "component",
+      "component": "global.icon",
+      "repeatable": false
+    }
+  },
+  "config": {}
+}

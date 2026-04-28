@@ -1,0 +1,7 @@
+{
+  "app": "bun run ./src/stack/main.ts",
+  "context": {
+    "env": "dev",
+    "@aws-cdk/core:newStyleStackSynthesis": true
+  }
+}

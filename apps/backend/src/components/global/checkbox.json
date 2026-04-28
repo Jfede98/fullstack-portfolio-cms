@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_global_checkboxes",
+  "info": {
+    "displayName": "checkbox"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "richtext",
+      "required": true
+    },
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "required": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    }
+  },
+  "config": {}
+}

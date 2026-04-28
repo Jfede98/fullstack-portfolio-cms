@@ -1,0 +1,87 @@
+{
+  "collectionName": "components_global_buttons",
+  "info": {
+    "displayName": "Button"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "default": "button",
+      "enum": [
+        "submit",
+        "button",
+        "link"
+      ]
+    },
+    "variant": {
+      "type": "enumeration",
+      "default": "primary",
+      "enum": [
+        "primary",
+        "secondary",
+        "tertiary",
+        "outline",
+        "noBorder",
+        "whatsapp"
+      ]
+    },
+    "hasIcon": {
+      "type": "boolean",
+      "default": false
+    },
+    "icon": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "hasIcon"
+            },
+            true
+          ]
+        }
+      },
+      "component": "global.icon",
+      "repeatable": false
+    },
+    "identifier": {
+      "type": "enumeration",
+      "required": true,
+      "default": "simple",
+      "enum": [
+        "modal",
+        "whatsapp",
+        "simple",
+        "lead",
+        "coverage"
+      ]
+    },
+    "isExternalHref": {
+      "type": "boolean",
+      "default": false
+    },
+    "lead_form": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lead-form.lead-form",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "identifier"
+            },
+            "modal"
+          ]
+        }
+      }
+    }
+  },
+  "config": {}
+}

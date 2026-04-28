@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_shared_footer_columns",
+  "info": {
+    "displayName": "FooterColumn"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "links": {
+      "type": "component",
+      "component": "shared.link-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

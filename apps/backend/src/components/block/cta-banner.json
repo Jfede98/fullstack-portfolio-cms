@@ -1,0 +1,51 @@
+{
+  "collectionName": "components_block_cta_banners",
+  "info": {
+    "displayName": "CtaBanner"
+  },
+  "options": {},
+  "attributes": {
+    "backgroundImage": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "title": {
+      "type": "component",
+      "component": "global.typography",
+      "repeatable": false
+    },
+    "description": {
+      "type": "text"
+    },
+    "cta": {
+      "type": "component",
+      "component": "global.button",
+      "repeatable": false
+    },
+    "features": {
+      "type": "component",
+      "component": "global.feature",
+      "repeatable": true
+    },
+    "layout": {
+      "type": "enumeration",
+      "enum": [
+        "vertical",
+        "horizontal"
+      ],
+      "default": "vertical"
+    },
+    "horizontalAlignment": {
+      "type": "enumeration",
+      "enum": [
+        "left",
+        "right"
+      ],
+      "default": "left"
+    }
+  },
+  "config": {}
+}

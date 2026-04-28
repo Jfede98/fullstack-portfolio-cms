@@ -1,0 +1,75 @@
+{
+  "collectionName": "components_block_heroes",
+  "info": {
+    "displayName": "Hero"
+  },
+  "options": {},
+  "attributes": {
+    "slides": {
+      "type": "component",
+      "component": "navigation.hero-slide",
+      "repeatable": true
+    },
+    "showWidgetOnDesktop": {
+      "type": "boolean",
+      "default": false
+    },
+    "horizontalFormOnDesktop": {
+      "type": "boolean",
+      "default": false
+    },
+    "autoSlideDelayMs": {
+      "type": "integer",
+      "required": false,
+      "default": 5000
+    },
+    "variant": {
+      "type": "enumeration",
+      "required": false,
+      "default": "default",
+      "enum": [
+        "default",
+        "light"
+      ]
+    },
+    "heroOverlaySource": {
+      "type": "enumeration",
+      "default": "lead_form",
+      "enum": [
+        "widget",
+        "lead_form"
+      ]
+    },
+    "overlayWidget": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::widget.widget",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "heroOverlaySource"
+            },
+            "widget"
+          ]
+        }
+      }
+    },
+    "overlayLeadForm": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::lead-form.lead-form",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "heroOverlaySource"
+            },
+            "lead_form"
+          ]
+        }
+      }
+    }
+  },
+  "config": {}
+}
