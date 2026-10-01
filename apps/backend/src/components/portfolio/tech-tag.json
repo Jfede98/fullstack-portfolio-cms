@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_portfolio_tech_tags",
+  "info": {
+    "displayName": "TechTag"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string",
+      "required": true
+    },
+    "color": {
+      "type": "enumeration",
+      "enum": [
+        "blue",
+        "green",
+        "orange",
+        "purple",
+        "pink",
+        "gray",
+        "red",
+        "yellow"
+      ],
+      "default": "blue"
+    }
+  },
+  "config": {}
+}

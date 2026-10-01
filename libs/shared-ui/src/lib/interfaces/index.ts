@@ -72,3 +72,9 @@ export type { IAttentionCenterCard, IAttentionCenterCardProps, IAttentionCenterC
 export type { ICentersFiltersProps, ICentersFiltersClassName } from "./centersFilters";
 export type { ICentersLayoutProps, ICentersLayoutClassName } from "./centersLayout";
 export type { IDualButtonsProps } from "./dualButtons";
+export type {
+  IProjectCardProps,
+  ITechTag,
+  TechTagColor,
+  ProjectCategory
+} from "./cards/projectCard";
