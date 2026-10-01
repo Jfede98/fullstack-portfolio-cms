@@ -39,7 +39,8 @@
         "block.fa-qs",
         "block.map",
         "block.informational-section",
-        "block.centers-page-block"
+        "block.centers-page-block",
+        "block.projects-grid"
       ]
     },
     "seo": {

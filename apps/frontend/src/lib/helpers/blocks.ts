@@ -41,6 +41,8 @@ import { BannerLinkBlock } from "@components/bannerLinkBlock";
 import { mapBannerLinkBlock } from "./mappers/bannerLinkBlock";
 import { FaqsBlock } from "@components/faqsBlock";
 import { mapFaqs } from "./mappers/faqs";
+import { ProjectsGrid } from "@components/projectsGrid";
+import { mapProjectsGrid } from "./mappers/projectsGrid";
 
 export const PageBlock: BlockComponent = {
   "block.widget": {
@@ -126,5 +128,9 @@ export const PageBlock: BlockComponent = {
   "block.fa-qs": {
     component: FaqsBlock,
     mapper: mapFaqs
+  },
+  "block.projects-grid": {
+    component: ProjectsGrid,
+    mapper: mapProjectsGrid
   }
 }

@@ -6,13 +6,16 @@ import { ModalProvider } from "./modal";
 import { FormContactProvider } from "./formContact";
 import TanStackQueryClientProvider from "./query";
 import { SemiautomaticFlowReduxProvider } from "./SemiautomaticFlowReduxProvider";
+import { LocaleProviderWrapper } from "./locale";
 
 export const RootLayoutProvider: FC<TProvider> = ({ children }) => (
   <SemiautomaticFlowReduxProvider>
     <TanStackQueryClientProvider>
-      <ModalProvider>
-        <FormContactProvider>{children}</FormContactProvider>
-      </ModalProvider>
+      <LocaleProviderWrapper>
+        <ModalProvider>
+          <FormContactProvider>{children}</FormContactProvider>
+        </ModalProvider>
+      </LocaleProviderWrapper>
     </TanStackQueryClientProvider>
   </SemiautomaticFlowReduxProvider>
 );

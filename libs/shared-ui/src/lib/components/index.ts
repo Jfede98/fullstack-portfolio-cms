@@ -46,3 +46,4 @@ export { CentersFilters } from "./centersFilters";
 export { CentersLayout } from "./centersLayout";
 export { DualButtons } from "./dualButtons";
 export { FAQCardsSlider } from "./faqCardsSlider";
+export { ProjectCard } from "./cards/projectCard";

@@ -39,7 +39,8 @@ export enum BlockType {
   FAQS = "fa-qs",
   INFORMATIONAL_SECTION = "informational-section",
   MAP = "map",
-  CENTERS_PAGE_BLOCK = "centers-page-block"
+  CENTERS_PAGE_BLOCK = "centers-page-block",
+  PROJECTS_GRID = "projects-grid"
 }
 
 export enum RenderModalType {
